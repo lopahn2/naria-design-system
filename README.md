@@ -29,7 +29,7 @@ npm run dev
 | 영역 | 내용 |
 | --- | --- |
 | Foundations 9 | 설계 원칙, 색상/테마, 타입, 간격, 반응형, 곡률/깊이, 공식 아이콘, 모션, 접근성 |
-| Components 76 | 행동 8, 입력/선택 22, 탐색 9, 표면/콘텐츠 11, 레이어 6, 피드백 8, 데이터 5, 레이아웃 7 |
+| Components 84 | 행동 9, 입력/선택 23, 탐색 9, 표면/콘텐츠 14, 레이어 6, 피드백 9, 데이터 7, 레이아웃 7 |
 | Patterns 6 | 가입/동의, 계정/설정, 검색/필터, 데이터 관리, 주문 요약, 대시보드 |
 | Resources | React API, 다운로드 가능한 TSX 예제, 토큰 JSON, 패키지, 기존 모션 82개 |
 
@@ -54,7 +54,7 @@ Apple/IBM의 간결한 행동 위계, IBM의 읽기 체계, Toss/Adobe의 입력
 ```sh
 npm run build            # 모션 + 토큰 + API + 타입 + UI 패키지 + 정적 사이트 + 단일 HTML 3종
 npm test                 # 기존 갤러리 및 시스템 논리/렌더/대비 검사
-npm run test:examples    # 다운로드 가능한 예제 76개의 TypeScript 검사
+npm run test:examples    # 다운로드 가능한 예제 84개의 TypeScript 검사
 npm run build:ui         # UI 패키지만 생성
 npm pack ./packages/ui --pack-destination deliverables
 ```

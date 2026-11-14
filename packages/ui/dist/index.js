@@ -3176,6 +3176,293 @@ function Agreement({
     error && /* @__PURE__ */ jsx10("p", { role: "alert", className: "nds-error", children: error })
   ] });
 }
+
+// packages/ui/src/console.tsx
+import {
+  useId as useId8
+} from "react";
+import {
+  EnterFullScreenIcon,
+  MinusIcon as MinusIcon2,
+  PaperPlaneIcon,
+  PlusIcon as PlusIcon2
+} from "@radix-ui/react-icons";
+import { Fragment as Fragment5, jsx as jsx11, jsxs as jsxs10 } from "react/jsx-runtime";
+function CodeBlock({
+  children,
+  title,
+  meta,
+  wrap = true,
+  maxHeight,
+  copy = true
+}) {
+  const head = title || meta || copy;
+  return /* @__PURE__ */ jsxs10("figure", { className: "nds-code", children: [
+    head && /* @__PURE__ */ jsxs10("figcaption", { children: [
+      title && /* @__PURE__ */ jsx11("strong", { children: title }),
+      meta && /* @__PURE__ */ jsx11("span", { children: meta }),
+      copy && /* @__PURE__ */ jsx11(CopyButton, { value: children, size: "sm", variant: "ghost", children: "\uBCF5\uC0AC" })
+    ] }),
+    /* @__PURE__ */ jsx11(
+      "pre",
+      {
+        tabIndex: 0,
+        "aria-label": title || "\uC6D0\uBB38",
+        className: cx(wrap && "is-wrap"),
+        style: maxHeight ? { maxHeight } : void 0,
+        children: /* @__PURE__ */ jsx11("code", { children })
+      }
+    )
+  ] });
+}
+var statusTone = {
+  ok: "success",
+  warning: "warning",
+  danger: "danger",
+  info: "info",
+  neutral: "neutral",
+  unknown: "neutral"
+};
+function StatusIndicator({
+  status = "neutral",
+  children,
+  pulse = false
+}) {
+  return /* @__PURE__ */ jsxs10(
+    "span",
+    {
+      className: cx(
+        "nds-status",
+        `nds-tone--${statusTone[status]}`,
+        status === "unknown" && "is-unknown",
+        pulse && "is-pulse"
+      ),
+      children: [
+        /* @__PURE__ */ jsx11("i", { "aria-hidden": true }),
+        children
+      ]
+    }
+  );
+}
+function Meter({
+  label,
+  value,
+  max = 100,
+  valueText,
+  warningAt,
+  dangerAt,
+  unknownText = "\uBBF8\uAD00\uCE21"
+}) {
+  const id = useId8();
+  const known = value !== null && Number.isFinite(value) && max > 0;
+  const ratio = known ? Math.min(1, Math.max(0, value / max)) : 0;
+  const tone = known && dangerAt !== void 0 && ratio >= dangerAt ? "danger" : known && warningAt !== void 0 && ratio >= warningAt ? "warning" : "accent";
+  const text = known ? valueText ?? `${Math.round(ratio * 100)}%` : unknownText;
+  return /* @__PURE__ */ jsxs10("div", { className: cx("nds-meter", `nds-tone--${tone}`, !known && "is-unknown"), children: [
+    /* @__PURE__ */ jsxs10("div", { className: "nds-meter-head", children: [
+      /* @__PURE__ */ jsx11("span", { id, children: label }),
+      /* @__PURE__ */ jsx11("strong", { children: text })
+    ] }),
+    /* @__PURE__ */ jsx11(
+      "div",
+      {
+        className: "nds-meter-track",
+        role: "meter",
+        "aria-labelledby": id,
+        "aria-valuemin": 0,
+        "aria-valuemax": max,
+        "aria-valuenow": known ? value : void 0,
+        "aria-valuetext": text,
+        children: /* @__PURE__ */ jsx11("span", { style: { width: `${ratio * 100}%` } })
+      }
+    )
+  ] });
+}
+function ChatMessage({
+  role = "assistant",
+  author,
+  time,
+  status,
+  actions,
+  highlighted = false,
+  children
+}) {
+  return /* @__PURE__ */ jsxs10(
+    "article",
+    {
+      className: cx(
+        "nds-chat-message",
+        `is-${role}`,
+        highlighted && "is-highlighted"
+      ),
+      children: [
+        /* @__PURE__ */ jsxs10("header", { children: [
+          /* @__PURE__ */ jsx11("strong", { children: author }),
+          time && /* @__PURE__ */ jsx11("time", { children: time }),
+          status && /* @__PURE__ */ jsx11("span", { className: "nds-chat-message-status", children: status })
+        ] }),
+        /* @__PURE__ */ jsx11("div", { className: "nds-chat-message-body", children }),
+        actions && /* @__PURE__ */ jsx11("footer", { children: actions })
+      ]
+    }
+  );
+}
+function Composer({
+  label = "\uBA54\uC2DC\uC9C0",
+  value,
+  onValueChange,
+  onSubmit,
+  placeholder,
+  notice,
+  submitLabel = "\uBCF4\uB0B4\uAE30",
+  disabled = false,
+  busy = false,
+  maxLength,
+  rows = 2
+}) {
+  const id = useId8();
+  const ready = value.trim().length > 0 && !disabled && !busy;
+  const send = () => {
+    if (ready) onSubmit(value.trim());
+  };
+  const submit = (e) => {
+    e.preventDefault();
+    send();
+  };
+  const key = (e) => {
+    if (e.key === "Enter" && !e.shiftKey && !e.nativeEvent.isComposing) {
+      e.preventDefault();
+      send();
+    }
+  };
+  return /* @__PURE__ */ jsxs10("form", { className: "nds-composer", onSubmit: submit, children: [
+    notice && /* @__PURE__ */ jsx11("p", { className: "nds-composer-notice", id: `${id}-notice`, children: notice }),
+    /* @__PURE__ */ jsxs10("div", { className: "nds-composer-row", children: [
+      /* @__PURE__ */ jsx11("label", { className: "nds-sr", htmlFor: id, children: label }),
+      /* @__PURE__ */ jsx11(
+        "textarea",
+        {
+          id,
+          className: "nds-input",
+          rows,
+          value,
+          maxLength,
+          placeholder,
+          disabled,
+          "aria-describedby": notice ? `${id}-notice` : void 0,
+          onChange: (e) => onValueChange(e.target.value),
+          onKeyDown: key
+        }
+      ),
+      /* @__PURE__ */ jsx11(
+        Button,
+        {
+          type: "submit",
+          disabled: !ready,
+          loading: busy,
+          trailing: /* @__PURE__ */ jsx11(PaperPlaneIcon, { "aria-hidden": true }),
+          children: submitLabel
+        }
+      )
+    ] })
+  ] });
+}
+function Legend({
+  label = "\uBC94\uB840",
+  items
+}) {
+  return /* @__PURE__ */ jsx11("ul", { className: "nds-legend", "aria-label": label, children: items.map((x) => /* @__PURE__ */ jsxs10("li", { className: `nds-tone--${x.tone || "neutral"}`, children: [
+    /* @__PURE__ */ jsx11("i", { className: `is-${x.kind || "dot"}`, "aria-hidden": true }),
+    x.label
+  ] }, x.label)) });
+}
+function ZoomControls({
+  label = "\uD655\uB300 \uC81C\uC5B4",
+  value,
+  min = 0.25,
+  max = 2,
+  onZoomIn,
+  onZoomOut,
+  onFit
+}) {
+  return /* @__PURE__ */ jsxs10("div", { className: "nds-zoom", role: "group", "aria-label": label, children: [
+    /* @__PURE__ */ jsx11(
+      IconButton,
+      {
+        label: "\uCD95\uC18C",
+        size: "sm",
+        variant: "outline",
+        disabled: value <= min,
+        onClick: onZoomOut,
+        children: /* @__PURE__ */ jsx11(MinusIcon2, { "aria-hidden": true })
+      }
+    ),
+    /* @__PURE__ */ jsxs10("output", { "aria-live": "polite", children: [
+      Math.round(value * 100),
+      "%"
+    ] }),
+    /* @__PURE__ */ jsx11(
+      IconButton,
+      {
+        label: "\uD655\uB300",
+        size: "sm",
+        variant: "outline",
+        disabled: value >= max,
+        onClick: onZoomIn,
+        children: /* @__PURE__ */ jsx11(PlusIcon2, { "aria-hidden": true })
+      }
+    ),
+    onFit && /* @__PURE__ */ jsx11(
+      Button,
+      {
+        size: "sm",
+        variant: "outline",
+        leading: /* @__PURE__ */ jsx11(EnterFullScreenIcon, { "aria-hidden": true }),
+        onClick: onFit,
+        children: "\uC804\uCCB4 \uBCF4\uAE30"
+      }
+    )
+  ] });
+}
+function DiagramNode({
+  title,
+  meta,
+  icon,
+  index,
+  status,
+  tone = "neutral",
+  selected = false,
+  dashed = false,
+  disabled = false,
+  onSelect
+}) {
+  const className = cx(
+    "nds-diagram-node",
+    `nds-tone--${tone}`,
+    selected && "is-selected",
+    dashed && "is-dashed"
+  );
+  const content = /* @__PURE__ */ jsxs10(Fragment5, { children: [
+    index !== void 0 && /* @__PURE__ */ jsx11("span", { className: "nds-diagram-node-index", children: index }),
+    icon && /* @__PURE__ */ jsx11("span", { className: "nds-diagram-node-icon", "aria-hidden": true, children: icon }),
+    /* @__PURE__ */ jsxs10("span", { className: "nds-diagram-node-text", children: [
+      /* @__PURE__ */ jsx11("strong", { children: title }),
+      meta && /* @__PURE__ */ jsx11("small", { title: meta, children: meta })
+    ] }),
+    status && /* @__PURE__ */ jsx11("span", { className: "nds-diagram-node-status", children: status })
+  ] });
+  return onSelect ? /* @__PURE__ */ jsx11(
+    "button",
+    {
+      type: "button",
+      className,
+      "aria-pressed": selected,
+      disabled,
+      onClick: onSelect,
+      children: content
+    }
+  ) : /* @__PURE__ */ jsx11("div", { className, children: content });
+}
 export {
   Accordion,
   Agreement,
@@ -3195,16 +3482,20 @@ export {
   Calendar,
   Card,
   Carousel,
+  ChatMessage,
   Checkbox,
+  CodeBlock,
   ColorPicker,
   Combobox,
   CommandPalette,
+  Composer,
   Container,
   CopyButton,
   DataTable,
   DatePicker,
   DateRangePicker,
   DescriptionList,
+  DiagramNode,
   Dialog,
   Divider,
   Drawer,
@@ -3215,8 +3506,10 @@ export {
   Grid,
   HoldButton,
   IconButton,
+  Legend,
   Link,
   ListRow,
+  Meter,
   MultiSelect,
   NariaProvider,
   NavigationBar,
@@ -3240,6 +3533,7 @@ export {
   SplitButton,
   Stack,
   Stat,
+  StatusIndicator,
   Stepper,
   Switch,
   Tabs,
@@ -3254,6 +3548,7 @@ export {
   Tooltip,
   Tree,
   VisuallyHidden,
+  ZoomControls,
   calendarCells,
   paletteLabelColor,
   palettePresets,

@@ -1424,6 +1424,139 @@ export function ComponentDemo({
           </p>
         </UI.Stack>
       );
+    case "zoom-controls":
+      return (
+        <UI.ZoomControls
+          value={number / 4}
+          onZoomOut={() => setNumber(Math.max(1, number - 1))}
+          onZoomIn={() => setNumber(Math.min(8, number + 1))}
+          onFit={() => setNumber(4)}
+        />
+      );
+    case "composer":
+      return (
+        <UI.Composer
+          value={text}
+          onValueChange={setText}
+          onSubmit={(v) => {
+            announce(`“${v}” 메시지를 보냈어요.`);
+            setText("");
+          }}
+          placeholder="분석에 추가할 지시를 입력하세요"
+          notice="Enter로 보내고 Shift+Enter로 줄을 바꿉니다."
+          disabled={disabled}
+          busy={loading}
+        />
+      );
+    case "code-block":
+      return (
+        <UI.CodeBlock title="kubectl 이벤트" meta="3건 · 14:02:11" maxHeight={160}>
+          {`Warning  BackOff   pod/order-7c9d  Back-off restarting failed container
+Warning  Unhealthy pod/order-7c9d  Readiness probe failed: HTTP 503
+Normal   Pulled    pod/order-7c9d  Container image already present on machine`}
+        </UI.CodeBlock>
+      );
+    case "chat-message":
+      return (
+        <UI.Stack gap={12}>
+          <UI.ChatMessage role="user" author="운영자" time="14:02">
+            order 서비스의 재시작 원인을 먼저 확인해 주세요.
+          </UI.ChatMessage>
+          <UI.ChatMessage
+            role="assistant"
+            author="분석 에이전트"
+            time="14:03"
+            status={<UI.Badge tone="success">검증 완료</UI.Badge>}
+            actions={
+              <UI.Button
+                size="sm"
+                variant="outline"
+                onClick={() => announce("상세 근거를 열었어요.")}
+              >
+                상세 보기
+              </UI.Button>
+            }
+          >
+            준비 상태 검사가 503을 반환해 컨테이너가 반복 재시작되고 있습니다.
+          </UI.ChatMessage>
+          <UI.ChatMessage role="system" author="시스템" time="14:04">
+            운영자 확인을 기다리고 있습니다.
+          </UI.ChatMessage>
+        </UI.Stack>
+      );
+    case "diagram-node":
+      return (
+        <UI.Grid min={220}>
+          <UI.DiagramNode
+            index="01"
+            icon={<DashboardIcon />}
+            title="신호 수집"
+            meta="이벤트 9건 · Prometheus"
+            tone="success"
+            status={<UI.Badge tone="success">완료</UI.Badge>}
+            selected={selected === "collect"}
+            onSelect={() => setSelected("collect")}
+            disabled={disabled}
+          />
+          <UI.DiagramNode
+            index="02"
+            icon={<MagnifyingGlassIcon />}
+            title="원인 분석"
+            meta="분석 에이전트 · 실행 중"
+            tone="accent"
+            status={<UI.Badge tone="accent">진행 중</UI.Badge>}
+            selected={selected === "analyze"}
+            onSelect={() => setSelected("analyze")}
+            disabled={disabled}
+          />
+          <UI.DiagramNode
+            index="03"
+            icon={<CheckIcon />}
+            title="조치 검증"
+            meta="예정"
+            dashed
+          />
+        </UI.Grid>
+      );
+    case "status-indicator":
+      return (
+        <UI.Stack direction="row" wrap gap={20}>
+          <UI.StatusIndicator status="ok">연결됨</UI.StatusIndicator>
+          <UI.StatusIndicator status="warning">확인 필요</UI.StatusIndicator>
+          <UI.StatusIndicator status="danger" pulse>
+            장애 발생
+          </UI.StatusIndicator>
+          <UI.StatusIndicator status="info">분석 중</UI.StatusIndicator>
+          <UI.StatusIndicator status="unknown">미관측</UI.StatusIndicator>
+        </UI.Stack>
+      );
+    case "meter":
+      return (
+        <UI.Grid min={200}>
+          <UI.Meter label="CPU" value={42} valueText="4.2 / 10 코어" />
+          <UI.Meter
+            label="메모리"
+            value={number * 11}
+            valueText={`${number * 11}%`}
+            warningAt={0.7}
+            dangerAt={0.9}
+          />
+          <UI.Meter label="디스크" value={null} />
+        </UI.Grid>
+      );
+    case "legend":
+      return (
+        <UI.Legend
+          items={[
+            { label: "정상", kind: "dot", tone: "success" },
+            { label: "관측 경고", kind: "dot", tone: "warning" },
+            { label: "장애", kind: "dot", tone: "danger" },
+            { label: "실측 연결", kind: "line", tone: "accent" },
+            { label: "미관측", kind: "dashed" },
+            { label: "네임스페이스", kind: "box" },
+          ]}
+        />
+      );
     default:
       return (
         <UI.Alert title="예제를 찾을 수 없습니다." tone="warning">
