@@ -19,9 +19,12 @@ import {
   StarFilledIcon,
   StarIcon,
   UploadIcon,
+  CalendarIcon,
 } from "@radix-ui/react-icons";
 import { cx, clamp, useControllable } from "./utils";
 import { Button, IconButton } from "./actions";
+import { Calendar } from "./data";
+import { Dialog } from "./overlays";
 export type FieldProps = {
   label: string;
   hint?: string;
@@ -700,8 +703,33 @@ export function FileUpload({
     </div>
   );
 }
-export function DatePicker(props: Omit<TextFieldProps, "type">) {
-  return <TextField {...props} type="date" />;
+export type DatePickerProps = Omit<TextFieldProps, "type" | "onChange" | "value" | "defaultValue" | "leading" | "trailing" | "min" | "max"> & {
+  value?: string;
+  defaultValue?: string;
+  onValueChange?: (value: string) => void;
+  range?: { start: string; end: string };
+  min?: string;
+  max?: string;
+};
+export function DatePicker({ value, defaultValue = "", onValueChange, range, ...props }: DatePickerProps) {
+  const [selected, setSelected] = useControllable(value, defaultValue, onValueChange);
+  const [open, setOpen] = useState(false);
+  const now = new Date();
+  const today = `${now.getFullYear()}-${String(now.getMonth()+1).padStart(2,"0")}-${String(now.getDate()).padStart(2,"0")}`;
+  const choose = (date: string) => { setSelected(date); setOpen(false); };
+  return <div className="nds-date-picker">
+    <TextField {...props} className={cx("nds-date-input", props.className)} type="date" value={selected}
+      onChange={(e) => setSelected(e.target.value)}
+      trailing={<IconButton label={`${props.label} 달력 열기`} disabled={props.disabled || props.readOnly}
+        aria-haspopup="dialog" aria-expanded={open} onClick={() => setOpen(true)}><CalendarIcon /></IconButton>}
+    />
+    <Dialog open={open} onOpenChange={setOpen} title={props.label} description="날짜를 선택하거나 방향키로 이동하세요."
+      footer={<><Button variant="ghost" disabled={!!((props.min && today < props.min) || (props.max && today > props.max))} onClick={() => choose(today)}>오늘 선택</Button><Button variant="secondary" onClick={() => setOpen(false)}>취소</Button></>}>
+      <div className="nds-date-calendar"><Calendar label={props.label} value={selected} onValueChange={choose}
+        min={props.min} max={props.max} range={range} disabled={props.disabled || props.readOnly} autoFocus />
+      </div>
+    </Dialog>
+  </div>;
 }
 export function TimePicker(props: Omit<TextFieldProps, "type">) {
   return <TextField {...props} type="time" />;
@@ -733,10 +761,11 @@ export function DateRangePicker({
           min={min}
           max={max}
           disabled={disabled}
-          onChange={(e) =>
+          range={{ start, end }}
+          onValueChange={(value) =>
             onChange({
-              start: e.target.value,
-              end: end && end < e.target.value ? "" : end,
+              start: value,
+              end: end && end < value ? "" : end,
             })
           }
         />
@@ -746,7 +775,8 @@ export function DateRangePicker({
           min={start || min}
           max={max}
           disabled={disabled}
-          onChange={(e) => onChange({ start, end: e.target.value })}
+          range={{ start, end }}
+          onValueChange={(value) => onChange({ start, end: value })}
         />
       </div>
     </fieldset>

@@ -65,7 +65,11 @@ export function ListRow({
         <strong>{title}</strong>
         {description && <small>{description}</small>}
       </span>
-      {trailing || (onClick && <ChevronRightIcon aria-hidden />)}
+      {(trailing || onClick) && (
+        <span className="nds-list-trailing">
+          {trailing || <ChevronRightIcon aria-hidden />}
+        </span>
+      )}
     </>
   );
   return onClick ? (

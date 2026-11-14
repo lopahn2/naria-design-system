@@ -36,6 +36,7 @@ import {
 import { ComponentDemo, type DemoState } from "./Demos";
 import { Foundation, Section, Rules } from "./Foundations";
 import { PatternDemo } from "./Patterns";
+import { MotionLab } from "../components/MotionLab";
 import api from "./api.generated.json";
 import tokens from "../../packages/ui/tokens.json";
 import "../../packages/ui/src/styles.css";
@@ -61,6 +62,9 @@ export function SystemApp() {
     [theme, setTheme] = useState<UI.Theme>(() =>
       read("naria:system:theme", "light") === "dark" ? "dark" : "light",
     ),
+    [palette, setPalette] = useState<UI.PaletteName>(() =>
+      UI.palettePresets.find((p) => p.id === read("naria:system:palette", "modern"))?.id || "modern",
+    ),
     [density, setDensity] = useState<"comfortable" | "compact">("comfortable"),
     [reduced, setReduced] = useState(false),
     [menu, setMenu] = useState(false),
@@ -83,6 +87,9 @@ export function SystemApp() {
       localStorage.setItem("naria:system:theme", theme);
     } catch {}
   }, [theme]);
+  useEffect(() => {
+    try { localStorage.setItem("naria:system:palette", palette); } catch {}
+  }, [palette]);
   useEffect(() => {
     const key = (e: KeyboardEvent) => {
       if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === "k") {
@@ -112,7 +119,9 @@ export function SystemApp() {
               ? "시작하기"
               : route === "release"
                 ? "릴리스와 적용"
-                : "naria design system";
+                : route === "motion-lab"
+                  ? "모션 갤러리"
+                  : "naria design system";
   const commandItems = [
     {
       id: "home",
@@ -125,6 +134,12 @@ export function SystemApp() {
       label: "시작하기 · 설치와 사용",
       onSelect: () => (location.hash = "start"),
       icon: <CodeIcon />,
+    },
+    {
+      id: "motion-lab",
+      label: "모션 갤러리 · 82개 인터랙션",
+      onSelect: () => (location.hash = "motion-lab"),
+      icon: <LightningBoltIcon />,
     },
     ...components.map((c) => ({
       id: c.id,
@@ -226,6 +241,7 @@ export function SystemApp() {
   return (
     <UI.NariaProvider
       theme={theme}
+      palette={palette}
       density={density}
       reducedMotion={reduced}
       className="nds-documentation"
@@ -288,6 +304,23 @@ export function SystemApp() {
               <GettingStarted />
             ) : route === "release" ? (
               <Release />
+            ) : route === "motion-lab" ? (
+              <div className="nds-motion-page">
+                <PageTitle
+                  eyebrow="MOTION LIBRARY"
+                  title="모션 갤러리"
+                  description="디자인 시스템 안에서 82개 모션을 비교하고, 화면에 어울리는 반응을 골라보세요."
+                />
+                <div className="nds-motion-search">
+                  <UI.SearchField
+                    label="모션 검색"
+                    placeholder="이름, 분류, 출처로 검색"
+                    value={filter}
+                    onValueChange={setFilter}
+                  />
+                </div>
+                <MotionLab query={filter} theme={theme} forceReduced={reduced} />
+              </div>
             ) : doc ? (
               <ComponentPage key={doc.id} doc={doc} />
             ) : section === "foundations" && foundation ? (
@@ -297,7 +330,7 @@ export function SystemApp() {
                   title={foundation.name}
                   description="모든 컴포넌트와 화면이 공유하는 설계의 기준입니다."
                 />
-                <Foundation id={id} />
+                <Foundation id={id} onPaletteChange={setPalette} onThemeChange={setTheme} />
               </>
             ) : section === "patterns" && pattern ? (
               <>
@@ -368,6 +401,13 @@ export function SystemApp() {
             checked={reduced}
             onCheckedChange={setReduced}
           />
+          <UI.Select
+            label="색상 시안"
+            value={palette}
+            onChange={(e) => setPalette(e.target.value as UI.PaletteName)}
+            options={UI.palettePresets.map((p) => ({ value: p.id, label: p.name }))}
+          />
+          <a className="nds-palette-settings-link" href="#foundations/color">팔레트 나란히 비교하기</a>
           <UI.SegmentedControl
             label="정보 밀도"
             options={[

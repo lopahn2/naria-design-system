@@ -539,7 +539,7 @@ function ToastItem({
   }, [paused, toast.action]);
   return (
     <div
-      className={cx("nds-toast", `nds-tone--${toast.tone || "neutral"}`)}
+      className={cx("nds-toast", !toast.description && "nds-toast--compact", `nds-tone--${toast.tone || "neutral"}`)}
       onMouseEnter={() => set(true)}
       onMouseLeave={() => set(false)}
       onFocus={() => set(true)}

@@ -208,8 +208,8 @@ const entries: Entry[] = [
     "DatePicker",
     "날짜 입력",
     "forms",
-    "기기에서 익숙한 네이티브 날짜 선택을 제공합니다.",
-    "기본 · 최소/최대 날짜 · 비활성",
+    "직접 입력과 전용 달력으로 날짜를 선택합니다.",
+    "입력 · 달력 · 오늘 · 제한 날짜 · 비활성",
   ],
   [
     "date-range-picker",
@@ -240,8 +240,8 @@ const entries: Entry[] = [
     "Calendar",
     "달력",
     "forms",
-    "월 탐색과 날짜 선택을 키보드 그리드로 제공합니다.",
-    "오늘 · 선택일 · 다른 달 · 제한 날짜",
+    "월 탐색과 하루·기간 선택을 키보드 그리드로 제공합니다.",
+    "오늘 · 선택일 · 기간 · 다른 달 · 제한 날짜",
   ],
   [
     "agreement",
@@ -779,7 +779,9 @@ const contracts: Record<string, Partial<(typeof behavior)[Category]>> = {
   },
   "date-picker": {
     keyboard:
-      "네이티브 date 입력의 키보드·OS 선택기 동작을 유지합니다. 브라우저마다 선택기 UI는 다릅니다.",
+      "날짜를 직접 입력하거나 달력 버튼을 누릅니다. 달력 안에서 방향키·Home/End·PageUp/PageDown으로 이동하고 Enter로 선택합니다. Escape로 닫으면 열기 버튼으로 포커스가 돌아옵니다.",
+    mobile: "전용 달력은 모바일에서 하단 시트로 표시됩니다. 날짜 입력 자체는 기기의 숫자·날짜 입력 기능을 유지합니다.",
+    rule: "value와 onValueChange로 YYYY-MM-DD 값을 연결합니다. min/max 밖의 날짜는 달력에서 비활성화되며 직접 입력은 네이티브 폼 유효성 검사를 사용합니다.",
   },
   "time-picker": {
     keyboard:

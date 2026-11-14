@@ -52,11 +52,16 @@ export declare function Tree({ label, nodes, value, onValueChange, }: {
 }): import("react").JSX.Element;
 export declare function calendarCells(month: string): string[];
 export declare function shiftCalendarMonth(date: string, delta: number): string;
-export declare function Calendar({ label, value, onValueChange, min, max, disabled, }: {
+export declare function Calendar({ label, value, onValueChange, min, max, disabled, range, autoFocus, }: {
     label: string;
     value: string;
     onValueChange: (v: string) => void;
     min?: string;
     max?: string;
     disabled?: boolean;
+    range?: {
+        start: string;
+        end: string;
+    };
+    autoFocus?: boolean;
 }): import("react").JSX.Element;

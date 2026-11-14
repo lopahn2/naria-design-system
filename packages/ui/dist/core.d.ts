@@ -1,16 +1,19 @@
 import { type HTMLAttributes, type ReactNode } from "react";
+import { type PaletteName } from "./palettes";
 export type Theme = "light" | "dark";
 export type Tone = "neutral" | "accent" | "success" | "warning" | "danger" | "info";
 export type Size = "sm" | "md" | "lg";
 type SystemContext = {
     theme: Theme;
+    palette: PaletteName;
     density: "comfortable" | "compact";
     reducedMotion: boolean;
 };
 export declare const useNaria: () => SystemContext;
-export declare function NariaProvider({ children, theme, density, reducedMotion, accent, className, ...props }: {
+export declare function NariaProvider({ children, theme: givenTheme, palette: givenPalette, density: givenDensity, reducedMotion: givenReducedMotion, accent, className, ...props }: {
     children: ReactNode;
     theme?: Theme;
+    palette?: PaletteName;
     density?: "comfortable" | "compact";
     reducedMotion?: boolean;
     accent?: {

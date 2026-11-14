@@ -8,37 +8,47 @@ import {
   type ReactNode,
 } from "react";
 import { cx } from "./utils";
+import { paletteVariables, type PaletteName } from "./palettes";
 export type Theme = "light" | "dark";
 export type Tone =
   "neutral" | "accent" | "success" | "warning" | "danger" | "info";
 export type Size = "sm" | "md" | "lg";
 type SystemContext = {
   theme: Theme;
+  palette: PaletteName;
   density: "comfortable" | "compact";
   reducedMotion: boolean;
 };
 const Context = createContext<SystemContext>({
   theme: "light",
+  palette: "modern",
   density: "comfortable",
   reducedMotion: false,
 });
 export const useNaria = () => useContext(Context);
 export function NariaProvider({
   children,
-  theme = "light",
-  density = "comfortable",
-  reducedMotion = false,
+  theme: givenTheme,
+  palette: givenPalette,
+  density: givenDensity,
+  reducedMotion: givenReducedMotion,
   accent,
   className = "",
   ...props
 }: {
   children: ReactNode;
   theme?: Theme;
+  palette?: PaletteName;
   density?: "comfortable" | "compact";
   reducedMotion?: boolean;
   accent?: { color: string; soft: string };
   className?: string;
 } & HTMLAttributes<HTMLDivElement>) {
+  const parent = useNaria();
+  const theme = givenTheme ?? parent.theme,
+    palette = givenPalette ?? parent.palette,
+    density = givenDensity ?? parent.density,
+    reducedMotion = givenReducedMotion ?? parent.reducedMotion;
   const [systemReduced, setReduced] = useState(false);
   useEffect(() => {
     const m = matchMedia("(prefers-reduced-motion: reduce)");
@@ -49,16 +59,18 @@ export function NariaProvider({
   }, []);
   return (
     <Context.Provider
-      value={{ theme, density, reducedMotion: reducedMotion || systemReduced }}
+      value={{ theme, palette, density, reducedMotion: reducedMotion || systemReduced }}
     >
       <div
         {...props}
         className={cx("nds-theme", className)}
         data-nds-theme={theme}
+        data-palette={palette}
         data-density={density}
         data-reduced={reducedMotion || systemReduced}
         style={
           {
+            ...paletteVariables(palette, theme),
             ...props.style,
             ...(accent
               ? {

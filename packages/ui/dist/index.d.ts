@@ -1,4 +1,5 @@
 export * from "./core";
+export * from "./palettes";
 export * from "./actions";
 export * from "./forms";
 export * from "./combobox";

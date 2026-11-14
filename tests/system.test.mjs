@@ -65,6 +65,31 @@ test("semantic color aliases resolve and label/status text meets 4.5:1", () => {
     assert.ok(contrastRatio(c["strong-border"], c.surface) >= 3);
   }
 });
+test("two six-hue palettes preserve neutral surfaces and readable accent roles", () => {
+  assert.deepEqual(UI.palettePresets.map(p=>p.id), ["modern","playful"]);
+  for (const palette of UI.palettePresets) {
+    assert.equal(palette.families.length,6);
+    assert.equal(new Set(palette.families.map(f=>f.id)).size,6);
+    for (const family of palette.families) {
+      assert.deepEqual(Object.keys(family.shades).map(Number),[100,300,500,700,900]);
+      for (const color of Object.values(family.shades)) {
+        assert.ok(contrastRatio(UI.paletteLabelColor(color),color)>=4.5,`${palette.id}/${family.id} swatch`);
+      }
+    }
+    for (const mode of ["light", "dark"]) {
+      const base = Object.fromEntries(Object.entries(tokens.semantic[mode]).map(([k,v]) => [k,resolve(v.$value)]));
+      const c = { ...base, ...palette[mode] };
+      for (const key of ["canvas","surface","raised","subtle","text","muted","border","strong-border","danger","success","warning","info"]) {
+        assert.equal(c[key],base[key],`${palette.id}/${mode} must preserve ${key}`);
+        assert.equal(UI.paletteVariables(palette.id,mode)[`--nds-${key}`],undefined);
+      }
+      for (const [fg,bg] of [["text","canvas"],["text","surface"],["muted","surface"],["muted","subtle"],["on-primary","primary"],["accent","accent-soft"],["accent","surface"]]) {
+        assert.ok(contrastRatio(c[fg],c[bg]) >= 4.5, `${palette.id}/${mode} ${fg}/${bg}`);
+      }
+      assert.ok(contrastRatio(c.focus,c.surface)>=3, `${palette.id}/${mode} focus`);
+    }
+  }
+});
 test("table sorting is numeric, stable, reversible and does not mutate rows", () => {
   const rows = [
     { id: "a", n: 20 },

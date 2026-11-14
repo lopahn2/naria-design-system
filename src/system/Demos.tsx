@@ -607,7 +607,7 @@ export function ComponentDemo({
           value={value}
           min="2026-11-01"
           max="2027-12-31"
-          onChange={(e) => setValue(e.target.value)}
+          onValueChange={setValue}
           disabled={disabled}
           hint="2026년 11월 이후 날짜를 선택하세요."
           error={error}
@@ -643,14 +643,19 @@ export function ComponentDemo({
       );
     case "calendar":
       return (
-        <UI.Calendar
-          label="일정 날짜"
-          value={value}
-          onValueChange={setValue}
-          min="2026-11-01"
-          max="2027-12-31"
-          disabled={disabled}
-        />
+        <div className="nds-calendar-examples">
+          <UI.Stack gap={16}>
+            <div><UI.Text as="h3" size="subheading">하루 선택</UI.Text><UI.Text size="small" muted>예약이나 일정의 날짜를 지정해요.</UI.Text></div>
+            <UI.Calendar label="일정 날짜" value={value} onValueChange={setValue} min="2026-11-01" max="2027-12-31" disabled={disabled} />
+            <p className="nds-hint" role="status">선택한 날짜 · {value}</p>
+          </UI.Stack>
+          <UI.Stack gap={16}>
+            <div><UI.Text as="h3" size="subheading">기간 선택</UI.Text><UI.Text size="small" muted>시작일과 종료일을 차례로 선택해요.</UI.Text></div>
+            <UI.Calendar label="기간 선택" value={range.end || range.start} range={range} disabled={disabled}
+              onValueChange={(date) => setRange(!range.start || range.end || date < range.start ? {start:date,end:""} : {...range,end:date})} />
+            <p className="nds-hint" role="status">{range.end ? `${range.start} — ${range.end}` : `${range.start}부터 · 종료일을 선택하세요.`}</p>
+          </UI.Stack>
+        </div>
       );
     case "agreement":
       return (

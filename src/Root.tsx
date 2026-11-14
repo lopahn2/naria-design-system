@@ -8,7 +8,6 @@ const legacy = new Set([
   "skills",
   "tokens",
   "quality",
-  "motion-lab",
   "actions",
   "typography",
   "inputs",

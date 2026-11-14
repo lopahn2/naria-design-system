@@ -91,7 +91,18 @@ export declare function FileUpload({ label, onFiles, accept, maxBytes, multiple,
     multiple?: boolean;
     disabled?: boolean;
 }): import("react").JSX.Element;
-export declare function DatePicker(props: Omit<TextFieldProps, "type">): import("react").JSX.Element;
+export type DatePickerProps = Omit<TextFieldProps, "type" | "onChange" | "value" | "defaultValue" | "leading" | "trailing" | "min" | "max"> & {
+    value?: string;
+    defaultValue?: string;
+    onValueChange?: (value: string) => void;
+    range?: {
+        start: string;
+        end: string;
+    };
+    min?: string;
+    max?: string;
+};
+export declare function DatePicker({ value, defaultValue, onValueChange, range, ...props }: DatePickerProps): import("react").JSX.Element;
 export declare function TimePicker(props: Omit<TextFieldProps, "type">): import("react").JSX.Element;
 export declare function DateRangePicker({ label, start, end, onChange, min, max, disabled, }: {
     label: string;

@@ -20,6 +20,7 @@ import {
 import * as UI from "../../packages/ui/src";
 import tokens from "../../packages/ui/tokens.json";
 import { motionRecipes } from "./catalog";
+import { PaletteChooser, PaletteScales, PaletteApplication } from "./PaletteChooser";
 const sources = [
   [
     "IBM · Carbon",
@@ -47,7 +48,9 @@ const sources = [
     "https://designbookmark.com/motion",
   ],
 ];
-export function Foundation({ id }: { id: string }) {
+export function Foundation({ id, onPaletteChange, onThemeChange }: { id: string; onPaletteChange?: (value: UI.PaletteName) => void; onThemeChange?: (value: UI.Theme) => void }) {
+  const { theme, palette } = UI.useNaria();
+  const preset = UI.palettePresets.find((p) => p.id === palette)!;
   const [replay, setReplay] = useState(0),
     [width, setWidth] = useState(390),
     [density, setDensity] = useState<"comfortable" | "compact">("comfortable");
@@ -141,42 +144,57 @@ export function Foundation({ id }: { id: string }) {
   if (id === "color")
     return (
       <>
-        <UI.Alert title="색은 역할로 사용합니다" tone="info">
-          컴포넌트에서 원시 HEX를 직접 쓰지 않고, surface · text · primary ·
-          accent · danger 같은 의미 토큰을 사용합니다. 공통 토대는 중립색이며
-          서비스별 강조색을 교체할 수 있습니다.
-        </UI.Alert>
-        <Section title="의미 색상">
-          <div className="nds-swatch-grid">
-            {Object.entries(tokens.semantic.light).map(([name, value]) => (
-              <div className="nds-swatch" key={name}>
-                <div style={{ background: `var(--nds-${name})` }} />
-                <strong>{name}</strong>
-                <code>--nds-{name}</code>
-                <small>{value.$value}</small>
-              </div>
-            ))}
+        {onPaletteChange && <Section title="두 가지 색상 시안">
+          <div className="nds-palette-intro">
+            <p>배경은 흰색과 회색으로, 색은 필요한 포인트에. 모던과 캐주얼의 6색 팔레트를 실제 컴포넌트에 적용해 비교하세요.</p>
+            {onThemeChange && <UI.SegmentedControl label="팔레트 색상 모드" value={theme} onValueChange={(v) => onThemeChange(v as UI.Theme)} options={[{value:"light",label:"라이트"},{value:"dark",label:"다크"}]} />}
           </div>
+          <PaletteChooser value={palette} onChange={onPaletteChange} />
+          <p className="nds-palette-current" role="status">현재 시안: {preset.name} · {theme === "light" ? "라이트" : "다크"} · 선택은 이 브라우저에 저장됩니다.</p>
+        </Section>}
+        <Section title="공통 무채색 베이스">
+          <p className="nds-palette-scale-intro">기본 청록에서 사용하던 흰색·회색 표면을 두 시안이 공유합니다. 입력창, 코드박스, 카드, 본문 영역은 같은 무채색을 사용하고, 다크 모드에서는 같은 어두운 회색으로 전환합니다.</p>
+          <div className="nds-palette-neutral">{[["canvas","화면 배경"],["surface","입력 · 카드"],["subtle","코드 · 보조 영역"],["border","기본 경계선"]].map(([token,label])=><div key={token}>
+            <i style={{background:`var(--nds-${token})`}} aria-hidden /><strong>{label}</strong><code>--nds-{token}</code>
+          </div>)}</div>
         </Section>
-        <Section title="상태와 의미">
-          <UI.Stack gap={12}>
-            <UI.Alert title="정상 처리" tone="success">
-              요청한 변경을 저장했습니다.
-            </UI.Alert>
-            <UI.Alert title="확인 필요" tone="warning">
-              기존 설정에 영향을 주는 변경입니다.
-            </UI.Alert>
-            <UI.Alert title="입력 수정" tone="danger">
-              이메일 형식을 확인하고 다시 입력해 주세요.
-            </UI.Alert>
-          </UI.Stack>
+        <Section title={`${preset.name} · 6색 팔레트`}>
+          <p className="nds-palette-scale-intro">500이 기준색입니다. 100·300은 채도를 낮추고 밝게, 700·900은 깊이를 더해 구성했습니다. 연한 색도 배경 전체를 채우지 않고 선택 상태와 작은 배지에 사용합니다.</p>
+          <PaletteScales palette={palette} />
         </Section>
-        <Section title="서비스 테마">
-          <pre className="nds-code-block">{`<NariaProvider\n  theme="light"\n  accent={{ color: '#086d72', soft: '#e2f4f1' }}\n>\n  <App />\n</NariaProvider>\n\n/* 서비스 테마에서도 상태 색과 라벨 대비는 유지 */`}</pre>
-          <p className="nds-hint">
-            텍스트 4.5:1, 큰 텍스트 및 컨트롤 경계 3:1을 목표로 검증하세요.
-            사용자 지정 강조색은 직접 대비를 확인해야 합니다.
-          </p>
+        <Section title="컴포넌트 적용 미리 보기">
+          <PaletteApplication />
+        </Section>
+        <Section title="사용 기준">
+          <UI.DescriptionList items={[
+            {term:"기본 표면",description:"화면 배경·입력·코드·본문 카드에는 canvas / surface / subtle만 사용합니다."},
+            {term:"컬러 포인트",description:"주요 버튼, 포커스, 선택 상태, 카테고리 표시처럼 의미 있는 작은 영역에만 사용합니다."},
+            {term:"텍스트 대비",description:"밝은 기준색을 그대로 흰 글자와 조합하지 않습니다. 버튼과 링크에는 대비를 만족하는 진한 단계를 적용합니다."},
+          ].map(x=>({label:x.term,value:x.description}))} />
+        </Section>
+        <details className="nds-palette-token-details"><summary>의미 색상 토큰과 상태 예제 펼치기</summary>
+          <Section title="의미 색상">
+            <div className="nds-swatch-grid">
+              {Object.entries(tokens.semantic[theme]).map(([name, value]) => (
+                <div className="nds-swatch" key={name}>
+                  <div style={{ background: `var(--nds-${name})` }} />
+                  <strong>{name}</strong><code>--nds-{name}</code>
+                  <small>{preset[theme][name as keyof UI.PaletteRoles] || tokens.color[value.$value.slice(7,-1) as keyof typeof tokens.color]?.$value || value.$value}</small>
+                </div>
+              ))}
+            </div>
+          </Section>
+          <Section title="상태의 의미는 유지합니다">
+            <UI.Stack gap={12}>
+              <UI.Alert title="정상 처리" tone="success">요청한 변경을 저장했습니다.</UI.Alert>
+              <UI.Alert title="확인 필요" tone="warning">기존 설정에 영향을 주는 변경입니다.</UI.Alert>
+              <UI.Alert title="입력 수정" tone="danger">이메일 형식을 확인하고 다시 입력해 주세요.</UI.Alert>
+            </UI.Stack>
+          </Section>
+        </details>
+        <Section title="서비스에 적용하기">
+          <pre className="nds-code-block">{`<NariaProvider\n  theme="${theme}"\n  palette="${palette}"\n>\n  <App />\n</NariaProvider>\n\n/* 2개 시안 · 6색 × 5단계 / 기본 표면은 공통 무채색 */\n.category-dot {\n  background: var(--nds-palette-orange-500);\n}`}</pre>
+          <p className="nds-hint">오류·성공·경고의 의미 색은 시안과 독립적으로 유지합니다. 기본 표면 토큰은 팔레트가 변경하지 않습니다.</p>
         </Section>
       </>
     );

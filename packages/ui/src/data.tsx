@@ -458,6 +458,8 @@ export function Calendar({
   min,
   max,
   disabled = false,
+  range,
+  autoFocus = false,
 }: {
   label: string;
   value: string;
@@ -465,10 +467,14 @@ export function Calendar({
   min?: string;
   max?: string;
   disabled?: boolean;
+  range?: { start: string; end: string };
+  autoFocus?: boolean;
 }) {
-  const today = new Date().toISOString().slice(0, 10);
-  const [month, setMonth] = useState((value || today).slice(0, 7)),
-    [focusDate, setFocusDate] = useState(value || today);
+  const now = new Date();
+  const today = `${now.getFullYear()}-${String(now.getMonth()+1).padStart(2,"0")}-${String(now.getDate()).padStart(2,"0")}`;
+  const initial = value || (min && today < min ? min : max && today > max ? max : today);
+  const [month, setMonth] = useState(initial.slice(0, 7)),
+    [focusDate, setFocusDate] = useState(initial);
   useEffect(() => {
     if (value) {
       setMonth(value.slice(0, 7));
@@ -478,6 +484,11 @@ export function Calendar({
   const refs = useRef<Record<string, HTMLButtonElement | null>>({}),
     id = useId(),
     cells = calendarCells(month);
+  useEffect(() => {
+    if (!autoFocus || disabled) return;
+    const frame = requestAnimationFrame(() => refs.current[initial]?.focus());
+    return () => cancelAnimationFrame(frame);
+  }, [autoFocus, disabled]);
   const shift = (delta: number) => {
     const [y, m] = month.split("-").map(Number);
     setMonth(new Date(Date.UTC(y, m - 1 + delta, 1)).toISOString().slice(0, 7));
@@ -494,24 +505,24 @@ export function Calendar({
         <IconButton
           label="이전 달"
           size="sm"
-          disabled={disabled}
+          disabled={disabled || !!(min && month <= min.slice(0, 7))}
           onClick={() => shift(-1)}
         >
           <ChevronLeftIcon />
         </IconButton>
         <strong id={id} aria-live="polite">
-          {month.replace("-", "년 ")}월
+          {Number(month.slice(0,4))}년 {Number(month.slice(5))}월
         </strong>
         <IconButton
           label="다음 달"
           size="sm"
-          disabled={disabled}
+          disabled={disabled || !!(max && month >= max.slice(0, 7))}
           onClick={() => shift(1)}
         >
           <ChevronRightIcon />
         </IconButton>
       </div>
-      <table role="grid" aria-label={label} aria-labelledby={id}>
+      <table role="grid" aria-label={`${label} · ${month}`} aria-multiselectable={range ? true : undefined}>
         <thead>
           <tr>
             {["월", "화", "수", "목", "금", "토", "일"].map((x) => (
@@ -528,7 +539,8 @@ export function Calendar({
                 const unavailable =
                   disabled || !!((min && date < min) || (max && date > max));
                 return (
-                  <td key={date} aria-selected={date === value}>
+                  <td key={date} aria-selected={date === value || !!(range?.start && range.end && date >= range.start && date <= range.end)}
+                    className={cx(!!(range?.start && range.end && date >= range.start && date <= range.end) && "is-in-range", date === range?.start && "is-range-start", date === range?.end && "is-range-end")}>
                     <button
                       type="button"
                       ref={(el) => {
@@ -557,7 +569,7 @@ export function Calendar({
                       }
                       className={cx(
                         !date.startsWith(month) && "is-outside",
-                        date === value && "is-selected",
+                        (date === value || date === range?.start || date === range?.end) && "is-selected",
                       )}
                       onClick={() => {
                         onValueChange(date);
@@ -602,6 +614,7 @@ export function Calendar({
           ))}
         </tbody>
       </table>
+      <div className="nds-calendar-legend"><span><i />오늘</span><span><i className="is-selected" />선택일</span>{range && <span><i className="is-range" />선택 기간</span>}</div>
     </div>
   );
 }

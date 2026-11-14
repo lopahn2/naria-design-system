@@ -33,6 +33,24 @@ export function App() {
 
 서비스 색상은 `accent={{color:'#086d72',soft:'#e2f4f1'}}` 또는 CSS 변수를 통해 바꿀 수 있습니다. 라이트/다크에 맞는 대비를 서비스가 확인해야 합니다. 기본 색의 검증 결과를 사용자 정의 테마에 그대로 적용하지 마세요.
 
+## 색상 조합과 날짜 선택
+
+`<NariaProvider theme="dark" palette="modern">`처럼 `palette`를 지정합니다. 시안은 `modern`(절제된 모던), `playful`(선명한 캐주얼)의 두 가지입니다. 각 시안은 blue / teal / green / yellow / orange / red의 기준색 6개와 100·300·500·700·900 다섯 단계로 구성합니다. `palettePresets`로 색상 데이터를, `--nds-palette-orange-500`처럼 CSS 변수로 각 단계를 사용합니다.
+
+**배경과 기본 텍스트 영역은 공통 무채색입니다.** 팔레트는 canvas / surface / raised / subtle / text / border를 덮어쓰지 않습니다. 입력창·코드박스·본문 카드는 중립 표면을 유지하고, 주요 버튼·포커스·선택·카테고리 표시만 컬러를 사용합니다. 상태의 의미 색도 그대로 유지합니다. 밝은 기준색을 버튼 바탕으로 무조건 사용하지 않고, 본문 및 행동 레이블 대비를 만족하는 단계를 선택합니다.
+
+중첩 Provider는 지정하지 않은 theme·palette·density·reducedMotion을 부모로부터 이어받습니다. light/dark는 공통 중립 배경을 전환하며, 팔레트별 배경 틴트를 만들지 않습니다.
+
+```tsx
+const [date, setDate] = useState('2026-11-18');
+<DatePicker label="예약 날짜" value={date} onValueChange={setDate}
+  min="2026-11-01" max="2027-12-31" />
+```
+
+DatePicker는 날짜 직접 입력과 디자인 시스템 달력을 연결합니다. 전용 달력은 데스크톱에서 Dialog, 모바일에서 하단 시트로 표시됩니다. 날짜 선택 후 입력값을 갱신하고 열기 버튼으로 포커스를 되돌립니다. `DateRangePicker`는 시작/종료일 입력과 달력의 기간 강조를 연결합니다. `Calendar`는 화면에 항상 펼쳐둘 달력이며 `range={{start,end}}`로 선택 기간을 표시할 수 있습니다.
+
+이 버전의 DatePicker 값 변경 API는 `onValueChange(date)`입니다. 이전 `onChange(event)` 사용 코드는 `onValueChange`로 변경하세요. min/max를 벗어난 직접 입력은 폼 제출 시 네이티브 유효성 검사로 검증하고, 서비스의 업무 규칙은 별도로 검증해야 합니다.
+
 ## 패키지 내용
 
 - `dist/index.js`: React·React DOM·Radix Icons를 제외한 ESM 번들
