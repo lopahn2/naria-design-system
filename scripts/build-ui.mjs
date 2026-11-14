@@ -30,13 +30,15 @@ const radixLicense = (
 ).find((f) => /^license/i.test(f));
 await fs.writeFile(
   "packages/ui/LICENSES.md",
-  "# Third-party notices\n\nRadix Icons 1.3.2 (MIT) is a peer dependency. IBM Plex Sans KR 5.3.0 (SIL Open Font License) is embedded in the stylesheet. No proprietary fonts or icons are included.\n\n## Radix Icons\n\n" +
+  "# Third-party notices\n\nRadix Icons 1.3.2 (MIT) is a peer dependency. Outfit 5.3.0 and Wanted Sans 1.0.3 (SIL Open Font License) are embedded in the stylesheet. No proprietary fonts or icons are included.\n\n## Radix Icons\n\n" +
     (await fs.readFile(
       "node_modules/@radix-ui/react-icons/" + radixLicense,
       "utf8",
     )) +
-    "\n\n## IBM Plex Sans KR\n\n" +
-    (await fs.readFile("packages/ui/fonts/LICENSE", "utf8")),
+    "\n\n## Outfit\n\n" +
+    (await fs.readFile("packages/ui/fonts/OUTFIT-LICENSE", "utf8")) +
+    "\n\n## Wanted Sans\n\n" +
+    (await fs.readFile("packages/ui/fonts/WANTED-SANS-LICENSE", "utf8")),
 );
 console.log(
   "@naria/ui: ESM, declarations, embedded font styles, tokens, licenses",

@@ -25,6 +25,7 @@ import {
   BookmarkIcon,
 } from "@radix-ui/react-icons";
 import * as UI from "../../packages/ui/src";
+import { NariaMark } from "./Brand";
 import {
   categories,
   components,
@@ -157,7 +158,9 @@ export function SystemApp() {
   const navigation = (
     <>
       <a className="nds-doc-brand" href="#system">
-        <span>n</span>
+        <span>
+          <NariaMark height={26} />
+        </span>
         <strong>
           naria<small>DESIGN SYSTEM</small>
         </strong>
@@ -1138,7 +1141,7 @@ function Release() {
             {
               label: "기반",
               value:
-                "원시·의미 토큰, light/dark, 서비스 테마, 밀도, IBM Plex Sans KR, Radix Icons",
+                "원시·의미 토큰, light/dark, 서비스 테마, 밀도, Outfit + Wanted Sans, Radix Icons",
             },
             {
               label: "구성요소",

@@ -20,6 +20,7 @@ import {
 import * as UI from "../../packages/ui/src";
 import tokens from "../../packages/ui/tokens.json";
 import { motionRecipes } from "./catalog";
+import { NariaMark } from "./Brand";
 import { PaletteChooser, PaletteScales, PaletteApplication } from "./PaletteChooser";
 const sources = [
   [
@@ -98,7 +99,7 @@ export function Foundation({ id, onPaletteChange, onThemeChange }: { id: string;
               {
                 label: "타이포 · IBM",
                 value:
-                  "IBM Plex Sans KR 400/600. 컴포넌트는 고정 타입, 페이지 제목은 유동 타입을 사용합니다.",
+                  "영문·숫자는 Outfit, 한글은 Wanted Sans 400/600. 컴포넌트는 고정 타입, 페이지 제목은 유동 타입을 사용합니다.",
               },
               {
                 label: "입력 · Toss / Adobe",
@@ -152,6 +153,14 @@ export function Foundation({ id, onPaletteChange, onThemeChange }: { id: string;
           <PaletteChooser value={palette} onChange={onPaletteChange} />
           <p className="nds-palette-current" role="status">현재 시안: {preset.name} · {theme === "light" ? "라이트" : "다크"} · 선택은 이 브라우저에 저장됩니다.</p>
         </Section>}
+        <Section title="로고">
+          <p className="nds-palette-scale-intro">소문자 n과 a가 한 획을 공유합니다. 글자는 본문색(--nds-text)을 따르고, 겹친 부분만 선택한 시안의 블루 500을 사용합니다. 라이트·다크와 시안 변경에 함께 반응합니다.</p>
+          <div className="nds-brand-specimen">
+            <div><NariaMark height={72} title="naria 로고" /><code>canvas</code></div>
+            <div className="nds-brand-specimen-inverse"><NariaMark height={72} title="naria 로고, 반전" /><code>inverse</code></div>
+            <div className="nds-brand-specimen-small"><NariaMark height={32} /><NariaMark height={20} /><NariaMark height={12} /><code>32 · 20 · 12px</code></div>
+          </div>
+        </Section>
         <Section title="공통 무채색 베이스">
           <p className="nds-palette-scale-intro">기본 청록에서 사용하던 흰색·회색 표면을 두 시안이 공유합니다. 입력창, 코드박스, 카드, 본문 영역은 같은 무채색을 사용하고, 다크 모드에서는 같은 어두운 회색으로 전환합니다.</p>
           <div className="nds-palette-neutral">{[["canvas","화면 배경"],["surface","입력 · 카드"],["subtle","코드 · 보조 영역"],["border","기본 경계선"]].map(([token,label])=><div key={token}>
@@ -202,7 +211,7 @@ export function Foundation({ id, onPaletteChange, onThemeChange }: { id: string;
     return (
       <>
         <div className="nds-type-intro">
-          <span>IBM PLEX SANS KR</span>
+          <span>OUTFIT + WANTED SANS</span>
           <h2>
             생각을 명확하게,
             <br />
