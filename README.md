@@ -33,7 +33,7 @@ npm run dev
 | Patterns 6 | 가입/동의, 계정/설정, 검색/필터, 데이터 관리, 주문 요약, 대시보드 |
 | Resources | React API, 다운로드 가능한 TSX 예제, 토큰 JSON, 패키지, 기존 모션 82개 |
 
-Apple/IBM의 간결한 행동 위계, IBM의 읽기 체계, Toss/Adobe의 입력 구조, Apple의 선택 상태, Toss/Apple의 탐색, IBM의 오류 복구, Vercel/Daangn에서 선호한 절제된 반응을 하나의 독립적인 구현으로 정리했습니다. 디자인을 그대로 복제한 라이브러리가 아닙니다. 보라색은 새 시스템에 사용하지 않고, 공식 Radix Icons를 사용하고, 서체는 영문·숫자에 Outfit, 한글에 Wanted Sans를 사용합니다. 기본은 중립색이며 서비스 강조색을 교체할 수 있습니다.
+Apple/IBM의 간결한 행동 위계, IBM의 읽기 체계, Toss/Adobe의 입력 구조, Apple의 선택 상태, Toss/Apple의 탐색, IBM의 오류 복구, Vercel/Daangn에서 선호한 절제된 반응을 하나의 독립적인 구현으로 정리했습니다. 디자인을 그대로 복제한 라이브러리가 아닙니다. 보라색은 새 시스템에 사용하지 않고, 공식 Radix Icons를 사용하고, 서체는 Wanted Sans만 사용합니다. 기본은 중립색이며 서비스 강조색을 교체할 수 있습니다.
 
 ## 코드 구조
 

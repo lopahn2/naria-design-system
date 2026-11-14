@@ -1408,7 +1408,7 @@ export function ComponentDemo({
             본문과 보조 설명의 위계는 색과 크기를 함께 사용합니다.
           </UI.Text>
           <UI.Text size="caption" muted>
-            Outfit + Wanted Sans · 12 / 16 / 24 / 40
+            Wanted Sans · 12 / 16 / 24 / 40
           </UI.Text>
         </UI.Stack>
       );
