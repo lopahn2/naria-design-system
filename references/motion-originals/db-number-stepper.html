@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Number Stepper</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../shared/tokens.css">
+<link rel="stylesheet" href="../shared/base.css">
+<link rel="stylesheet" href="stepper.css">
+</head>
+<body>
+<span class="badge">Inputs · Stepper</span>
+<div class="stp" id="stp">
+  <div class="txt"><b>Guests</b><span>Up to 8 people</span></div>
+  <div class="ctl">
+    <button class="b" id="minus" aria-label="Fewer guests"><svg viewBox="0 0 24 24"><path d="M6 12h12"/></svg></button>
+    <div class="num" id="num" aria-live="polite"><span id="na">2</span><span id="nb"></span></div>
+    <button class="b" id="plus" aria-label="More guests"><svg viewBox="0 0 24 24"><path d="M6 12h12M12 6v12"/></svg></button>
+  </div>
+</div>
+<script src="../shared/motion.js"></script>
+<script src="stepper.js"></script>
+</body>
+</html>

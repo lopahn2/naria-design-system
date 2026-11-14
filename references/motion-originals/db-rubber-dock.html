@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Rubber Dock</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../shared/tokens.css">
+<link rel="stylesheet" href="../shared/base.css">
+<link rel="stylesheet" href="dock.css">
+</head>
+<body>
+<span class="badge">Morph · Elastic</span>
+<div class="ground" id="ground"></div>
+<div class="dock" id="dock">
+  <div class="panels">
+    <section class="panel" data-i="0">
+      <div class="head it" style="--i:0"><h3>Overview</h3><small>This week</small></div>
+      <div class="tiles">
+        <div class="tile it" style="--i:1"><small>Visits</small><b>12.4k</b><em>+8%</em></div>
+        <div class="tile it" style="--i:2"><small>Sales</small><b>318</b><em>+21%</em></div>
+        <div class="tile it" style="--i:3"><small>Rate</small><b>3.9%</b></div>
+      </div>
+      <div class="chart it" style="--i:4" id="chart"></div>
+    </section>
+    <section class="panel" data-i="1">
+      <div class="field it" style="--i:0">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+        <span class="typed" id="typed"></span>
+      </div>
+      <div class="chips it" style="--i:1"><span class="chip">Springs</span><span class="chip">Morph</span><span class="chip">Elastic</span><span class="chip">Drag</span></div>
+      <div class="row it" style="--i:2"><div class="av" data-av="7" aria-hidden="true"></div><div class="tx"><b>Spring physics, explained</b><span>Stiffness, damping and why mass matters</span></div></div>
+      <div class="row it" style="--i:3"><div class="av" data-av="8" aria-hidden="true"></div><div class="tx"><b>Morphing containers</b><span>One surface, many states</span></div></div>
+      <div class="row it" style="--i:4"><div class="av" data-av="9" aria-hidden="true"></div><div class="tx"><b>Rubber banding at the edges</b><span>Resistance that feels physical</span></div></div>
+    </section>
+    <section class="panel" data-i="2">
+      <div class="head it" style="--i:0"><h3>Inbox</h3><small>3 new</small></div>
+      <div class="row it" style="--i:1"><div class="av" data-av="10" aria-hidden="true"></div><div class="tx"><b>New template order</b><span>Someone just bought the full kit</span></div><time>2m</time><span class="dot"></span></div>
+      <div class="row it" style="--i:2"><div class="av" data-av="11" aria-hidden="true"></div><div class="tx"><b>Feedback on v2</b><span>The dock feels so good, can we…</span></div><time>18m</time><span class="dot"></span></div>
+      <div class="row it" style="--i:3"><div class="av" data-av="12" aria-hidden="true"></div><div class="tx"><b>Invoice paid</b><span>Payment received, thank you</span></div><time>1h</time><span class="dot"></span></div>
+      <div class="row it" style="--i:4"><div class="av" data-av="1" aria-hidden="true"></div><div class="tx"><b>Weekly digest</b><span>Your numbers for the week</span></div><time>3h</time></div>
+    </section>
+    <section class="panel" data-i="3">
+      <div class="me it" style="--i:0"><div class="av" data-av="2" aria-hidden="true"></div><div><b>Lina Hart</b><span>@linahart</span></div></div>
+      <div class="set it" style="--i:1">Slow motion <button class="sw" id="sw-slow" role="switch" aria-checked="false" aria-label="Slow motion"></button></div>
+      <div class="set it" style="--i:2">Haptics <button class="sw" role="switch" aria-checked="true" aria-label="Haptics"></button></div>
+      <div class="set it" style="--i:3">Sounds <button class="sw" role="switch" aria-checked="false" aria-label="Sounds"></button></div>
+    </section>
+  </div>
+  <div class="tabs" id="tabs">
+    <div class="icons base" id="baseIcons" role="tablist" aria-label="Sections"></div>
+    <div class="indicator" id="ind"></div>
+    <div class="icons top" id="topIcons" aria-hidden="true"></div>
+  </div>
+</div>
+<script src="../shared/motion.js"></script>
+<script src="dock.js"></script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+/* Expand Card: three stay rows. Click one and it rises to the top and opens
+   into a detail card (photo grows, title slides under it, details fade in)
+   while the others fall away. Click again to fold it back. */
+.list{
+  position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
+  width:min(320px,calc(100vw - 48px));height:280px;
+  font-family:var(--font-inter,Inter),Inter,"Helvetica Neue",Arial,sans-serif;
+}
+.ex{position:absolute;left:0;top:0;width:100%;height:72px;border-radius:20px;background:var(--surface);overflow:hidden;cursor:pointer;will-change:transform,height,opacity}
+.thumb{position:absolute;left:12px;top:12px;width:48px;height:48px;border-radius:12px}
+.head{position:absolute;left:0;top:0;will-change:transform}
+.t{font-size:var(--fs-base);font-weight:var(--fw-bold);line-height:20px;white-space:nowrap;color:var(--text)}
+.s{font-size:var(--fs-sm);line-height:18px;color:var(--muted);white-space:nowrap}
+.price{position:absolute;right:16px;top:0;font-size:var(--fs-base);font-weight:var(--fw-bold);color:var(--text);will-change:transform}
+.more{position:absolute;left:16px;right:16px;top:176px;opacity:0;will-change:transform,opacity}
+.more p{font-size:var(--fs-sm);line-height:19px;color:var(--text-2)}
+.row{display:flex;align-items:center;gap:6px;margin-top:12px}
+.chip,.go{white-space:nowrap}
+.chip{font-size:var(--fs-xs);font-weight:var(--fw-medium);padding:5px 10px;border-radius:var(--r-pill);background:var(--fill-2);color:var(--text-2)}
+.go{margin-left:auto;font-size:var(--fs-sm);font-weight:var(--fw-bold);padding:7px 14px;border-radius:var(--r-pill);background:var(--inverse);color:var(--on-inverse)}

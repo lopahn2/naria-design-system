@@ -1,0 +1,59 @@
+/* Springy Input: every character lands with a bounce, the caret stretches as it travels */
+.f-wrap{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);display:flex;flex-direction:column;align-items:center;gap:14px;width:min(340px,calc(100vw - 32px))}
+.field{
+  position:relative;width:100%;height:60px;border-radius:30px;background:var(--surface);
+  box-shadow:0 0 0 1px var(--rim) inset,0 18px 40px -20px rgba(0,0,0,calc(.9*var(--sh)));
+  transition:box-shadow .25s,background .3s;overflow:hidden;will-change:width,transform;
+}
+.field.focus{box-shadow:0 0 0 1.5px var(--focus-rim) inset,0 18px 40px -20px rgba(0,0,0,calc(.9*var(--sh)))}
+.field.err{box-shadow:0 0 0 1.5px var(--orange) inset,0 18px 40px -20px rgba(0,0,0,calc(.9*var(--sh)))}
+.field.ok{background:var(--green)}
+
+.flabel{position:absolute;left:22px;top:20px;font-size:var(--fs-lg);color:var(--muted);transform-origin:left top;pointer-events:none;white-space:nowrap;transition:opacity .2s}
+.box{position:absolute;left:22px;right:62px;top:27px;height:24px}
+.layer{position:absolute;inset:0;overflow:hidden;white-space:pre;pointer-events:none}
+.layer-in{position:absolute;left:0;top:0;height:24px;line-height:24px;white-space:pre}
+.ch{display:inline-block;font-size:var(--fs-lg);font-weight:var(--fw-medium);color:var(--text);line-height:24px;font-kerning:none;transform-origin:50% 80%}
+.ch.in{animation:drop .5s cubic-bezier(.2,.8,.2,1) both;animation-delay:var(--d,0ms)}
+.ch.out{position:absolute;top:0;animation:out .34s cubic-bezier(.5,0,.75,0) forwards}
+.ch.nope{animation:nope .46s ease both;animation-delay:var(--d,0ms)}
+.ch.fly{animation:fly .42s cubic-bezier(.5,0,.75,0) forwards;animation-delay:var(--d,0ms)}
+@keyframes drop{
+  0%{transform:translateY(14px) rotate(-16deg) scale(.5);opacity:0;filter:blur(3px)}
+  55%{transform:translateY(-3px) rotate(4deg) scale(1.1);opacity:1;filter:none}
+  80%{transform:translateY(1px) rotate(-1deg) scale(.98)}
+  100%{transform:none}
+}
+@keyframes out{to{transform:translateY(-18px) rotate(20deg) scale(.5);opacity:0;filter:blur(3px)}}
+@keyframes nope{0%,100%{transform:none}20%{transform:translateX(-4px) rotate(-8deg)}40%{transform:translateX(4px) rotate(6deg)}60%{transform:translateX(-2px)}80%{transform:translateX(1px)}}
+@keyframes fly{to{transform:translateY(-28px) scale(.6);opacity:0;filter:blur(4px)}}
+
+.email{
+  position:absolute;inset:0;width:100%;height:100%;border:0;outline:none;background:none;padding:0;
+  font:var(--fw-medium) var(--fs-lg) var(--font);line-height:24px;font-kerning:none;letter-spacing:0;
+  color:transparent;caret-color:transparent;
+}
+.email::selection{background:var(--fill-3);color:transparent}
+.caret{position:absolute;left:0;top:2px;width:2px;height:20px;border-radius:2px;background:var(--text);opacity:0;pointer-events:none;transform-origin:left center}
+.caret.blink{animation:blink 1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+
+.go{
+  position:absolute;right:8px;top:8px;width:44px;height:44px;border-radius:50%;border:0;
+  background:var(--inverse);color:var(--on-inverse);display:grid;place-items:center;cursor:pointer;
+  transition:transform .35s cubic-bezier(.34,1.56,.64,1),opacity .25s;
+}
+.go svg{width:20px;height:20px}
+.go.idle{transform:scale(.82);opacity:.35}
+.go:active{transform:scale(.88)}
+.field.ok .go,.field.ok .flabel,.field.ok .box{opacity:0;pointer-events:none}
+
+.done{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;gap:8px;color:var(--black);
+  font-size:var(--fs-lg);font-weight:var(--fw-medium);white-space:nowrap;opacity:0;transform:scale(.9);pointer-events:none}
+.done svg{width:20px;height:20px}
+.done path{stroke-dasharray:24;stroke-dashoffset:24}
+.field.ok .done{opacity:1;transform:none;transition:opacity .3s .15s,transform .6s cubic-bezier(.16,1,.3,1) .15s}
+.field.ok .done path{stroke-dashoffset:0;transition:stroke-dashoffset .45s cubic-bezier(.65,0,.35,1) .3s}
+
+.help{font-size:var(--fs-sm);color:var(--muted-2);height:18px;transition:color .2s}
+.help.err{color:var(--orange)}

@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Pull to Refresh</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../shared/tokens.css">
+<link rel="stylesheet" href="../shared/base.css">
+<link rel="stylesheet" href="pull.css">
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <filter id="goo" x="-50%" y="-50%" width="200%" height="200%">
+    <feGaussianBlur in="SourceGraphic" stdDeviation="7" result="b"/>
+    <feColorMatrix in="b" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 22 -10" result="g"/>
+    <feComposite in="SourceGraphic" in2="g" operator="atop"/>
+  </filter>
+</svg>
+<span class="badge">Scroll · Elastic</span>
+<div class="phone">
+  <div class="p-head"><h3>Inbox</h3><small id="updated">Updated just now</small></div>
+  <div class="p-body" id="body" role="region" aria-label="Messages, drag down to refresh">
+    <div class="goo"><div class="handle"></div><div class="drop" id="drop"></div></div>
+    <div class="spin" id="spin"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M12 4a8 8 0 0 1 8 8"/></svg></div>
+    <div class="list" id="list">
+      <div class="row"><div class="av" data-av="1" aria-hidden="true"></div><div class="tx"><b>New template order</b><span>Someone just bought the full kit</span></div><time>2m</time><span class="dot"></span></div>
+      <div class="row"><div class="av" data-av="2" aria-hidden="true"></div><div class="tx"><b>Feedback on v2</b><span>The dock feels so good, can we…</span></div><time>18m</time><span class="dot"></span></div>
+      <div class="row"><div class="av" data-av="3" aria-hidden="true"></div><div class="tx"><b>Invoice paid</b><span>Payment received, thank you</span></div><time>1h</time></div>
+      <div class="row"><div class="av" data-av="4" aria-hidden="true"></div><div class="tx"><b>Weekly digest</b><span>Your numbers for the week</span></div><time>3h</time></div>
+      <div class="row"><div class="av" data-av="5" aria-hidden="true"></div><div class="tx"><b>Payout sent</b><span>Your monthly payout is on its way</span></div><time>1d</time></div>
+      <div class="row"><div class="av" data-av="6" aria-hidden="true"></div><div class="tx"><b>Kit approved</b><span>Your listing is live on the store</span></div><time>2d</time></div>
+    </div>
+  </div>
+</div>
+<script src="../shared/motion.js"></script>
+<script src="pull.js"></script>
+</body>
+</html>

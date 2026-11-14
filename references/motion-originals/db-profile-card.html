@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Profile Card</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../shared/tokens.css">
+<link rel="stylesheet" href="../shared/base.css">
+<link rel="stylesheet" href="profile.css">
+</head>
+<body>
+<span class="badge">Cards · Profile</span>
+<div class="pro" id="pro">
+  <div class="who"><div class="av" id="av" data-av="3"></div><div><p class="name">Maya Kerr</p><p class="handle">@maya.makes</p></div></div>
+  <p class="bio">Product designer. Drawing small tools for big teams.</p>
+  <div class="stats"><p><b id="followers"></b> Followers</p><p><b>312</b> Following</p></div>
+  <div class="acts" id="acts">
+    <button class="follow" id="follow"><span class="bg" id="fbg"></span><span class="l a" id="la">Follow</span><span class="l b" id="lb">Following</span></button>
+    <button class="msg" id="msg">Message</button>
+  </div>
+</div>
+
+<script src="../shared/motion.js"></script>
+<script src="profile.js"></script>
+</body>
+</html>

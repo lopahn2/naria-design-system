@@ -1,0 +1,12 @@
+/* Bottom Bar: a mobile tab bar. The active tab opens to show its name in a
+   soft pill, the others close to icons, and the icon pops when picked. */
+.bar{
+  position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
+  display:flex;align-items:center;gap:4px;padding:8px;border-radius:26px;background:var(--surface);
+  font-family:var(--font-inter,Inter),Inter,"Helvetica Neue",Arial,sans-serif;
+}
+.it{position:relative;z-index:1;display:flex;align-items:center;height:44px;padding:0 13px;border:0;border-radius:var(--r-pill);background:none;color:var(--muted);cursor:pointer;font:inherit;overflow:hidden;transition:color .25s}
+.it[aria-selected="true"]{color:var(--text)}
+.it svg{width:22px;height:22px;flex:none;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round;will-change:transform}
+.nm{display:block;overflow:hidden;white-space:nowrap;font-size:var(--fs-md);font-weight:var(--fw-medium);width:0;opacity:0}
+.hl{position:absolute;left:0;top:8px;height:44px;border-radius:var(--r-pill);background:var(--fill-3);will-change:transform,width}

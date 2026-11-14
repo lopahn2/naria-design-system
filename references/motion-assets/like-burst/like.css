@@ -1,0 +1,16 @@
+/* Like Burst: the heart squashes, fills red and throws out a ring of small
+   dots, while the count rolls up by one. */
+.like{
+  position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
+  display:flex;align-items:center;gap:10px;height:56px;padding:0 20px 0 16px;border:0;border-radius:var(--r-pill);
+  background:var(--surface);color:var(--text);cursor:pointer;
+  font-family:var(--font-inter,Inter),Inter,"Helvetica Neue",Arial,sans-serif;font-size:var(--fs-xl);font-weight:var(--fw-bold);
+}
+.hw{position:relative;width:26px;height:26px}
+.heart{position:absolute;inset:0;width:26px;height:26px;overflow:visible;will-change:transform}
+#hp{fill:transparent;stroke:var(--text-2);stroke-width:1.9;stroke-linejoin:round}
+.burst{position:absolute;left:50%;top:50%;width:0;height:0}
+.burst i{position:absolute;left:-3px;top:-3px;width:6px;height:6px;border-radius:50%;will-change:transform,opacity}
+.num{position:relative;height:22px;overflow:hidden;font-variant-numeric:tabular-nums}
+.col{display:flex;flex-direction:column;will-change:transform}
+.col b{display:block;height:22px;line-height:22px;font-weight:var(--fw-bold)}

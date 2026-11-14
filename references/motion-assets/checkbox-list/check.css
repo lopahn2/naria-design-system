@@ -1,0 +1,16 @@
+/* Checkbox List: a box fills with a pop, the check draws itself, and a line
+   runs across the task from left to right while the text dims. The done
+   count rolls. */
+.todo{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:min(320px,calc(100vw - 48px));padding:14px 16px 8px;border-radius:24px;background:var(--surface);font-family:var(--font-inter,Inter),Inter,"Helvetica Neue",Arial,sans-serif;}
+.hd{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:6px}
+.hd b{font-size:var(--fs-lg);font-weight:var(--fw-bold);color:var(--text)}
+.cnt{display:inline-flex;align-items:baseline;gap:4px;font-size:var(--fs-xs);color:var(--muted)}
+.cnt .col{display:inline-block;height:16px;overflow:hidden;line-height:16px;color:var(--text);font-weight:var(--fw-bold);font-variant-numeric:tabular-nums}
+.cnt .col span{display:block;height:16px;will-change:transform}
+ul{list-style:none}
+li{display:flex;align-items:center;gap:12px;height:48px;cursor:pointer}
+.cb{position:relative;width:24px;height:24px;flex:none;padding:0;border:0;border-radius:8px;background:var(--fill-3);cursor:pointer;display:grid;place-items:center;will-change:transform}
+.cb svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-linecap:round;stroke-linejoin:round;stroke:var(--on-green);stroke-width:2.8}
+.t{position:relative;font-size:var(--fs-base);color:var(--text);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;transition:color .3s}
+li.done .t{color:var(--muted)}
+.strike{position:absolute;left:0;top:50%;height:1.5px;margin-top:-.75px;width:0;background:var(--muted);border-radius:1px}

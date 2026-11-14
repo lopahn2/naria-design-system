@@ -1,0 +1,46 @@
+/* Glass Lens: a round magnifying glass that glides over a photo.
+   Only the photo and the glass. No stroke, no shadow (Noah, 9 Nov 2026):
+   the glass reads as glass through how it bends the photo, a darker
+   refraction band at its edge, a thin bright rim of light and a soft
+   specular reflection. */
+.poster{
+  position:absolute;left:50%;top:50%;
+  width:min(360px,calc(100vw - 32px));height:300px;
+  margin:-150px 0 0 calc(min(360px,calc(100vw - 32px)) / -2);
+  border-radius:var(--r-card);overflow:hidden;
+  background:#9fb7c9 url(../shared/img/hills-9.webp) center/cover no-repeat;
+}
+
+.lens{
+  position:absolute;left:0;top:0;width:128px;height:128px;border-radius:50%;
+  overflow:hidden;pointer-events:none;will-change:transform;z-index:4;
+  isolation:isolate;
+}
+.lens-view,.lens-view .layer{position:absolute;left:0;top:0;width:100%;height:100%}
+.lens-view .layer{overflow:hidden;border-radius:50%}
+.lens-view .poster{margin:0;left:0;top:0;border-radius:0;will-change:transform}
+/* each layer bends a bit more toward the rim, like a real convex lens */
+.lens-view .l1{-webkit-mask:radial-gradient(circle closest-side,transparent 52%,#000 74%);mask:radial-gradient(circle closest-side,transparent 52%,#000 74%)}
+.lens-view .l2{-webkit-mask:radial-gradient(circle closest-side,transparent 74%,#000 90%);mask:radial-gradient(circle closest-side,transparent 74%,#000 90%)}
+.lens-view .l0 .poster{filter:saturate(1.08) contrast(1.03)}
+
+.lens-glass{
+  position:absolute;inset:0;border-radius:50%;pointer-events:none;
+  background:
+    /* soft window reflection, top left */
+    radial-gradient(40% 22% at 34% 17%,rgba(255,255,255,.26),rgba(255,255,255,.06) 60%,rgba(255,255,255,0) 80%),
+    /* small light caught at the bottom right */
+    radial-gradient(12% 7% at 70% 86%,rgba(255,255,255,.42),rgba(255,255,255,0) 80%),
+    /* thin bright rim of light */
+    radial-gradient(circle closest-side,rgba(255,255,255,0) 88%,rgba(255,255,255,.08) 95%,rgba(255,255,255,.34) 99%,rgba(255,255,255,.12) 100%),
+    /* refraction band: the edge of thick glass goes a little darker */
+    radial-gradient(circle closest-side,rgba(0,0,0,0) 74%,rgba(10,20,30,.06) 87%,rgba(10,20,30,.13) 94%,rgba(10,20,30,0) 98%);
+}
+/* faint colour fringing right at the edge */
+.lens-glass::after{
+  content:"";position:absolute;inset:0;border-radius:50%;
+  background:conic-gradient(from 200deg,rgba(255,80,80,.0),rgba(255,120,90,.22),rgba(255,220,120,.0) 20%,rgba(90,170,255,.0) 45%,rgba(90,150,255,.24) 60%,rgba(160,100,255,.0) 75%,rgba(255,80,80,.0));
+  -webkit-mask:radial-gradient(circle closest-side,transparent 88%,#000 95%,transparent 99%);
+  mask:radial-gradient(circle closest-side,transparent 88%,#000 95%,transparent 99%);
+  mix-blend-mode:screen;
+}

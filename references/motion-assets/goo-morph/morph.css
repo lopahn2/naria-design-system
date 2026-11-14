@@ -1,0 +1,12 @@
+/* Goo Morph: one word melts into the next. Both words blur in opposite
+   directions and a hard alpha threshold turns the overlapping blur into one
+   liquid shape. The threshold is on only while melting, so words at rest keep
+   their smooth edges. Sized so the longest word fits a narrow card. */
+.morph{
+  position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
+  width:calc(100vw - 32px);height:1.2em;color:var(--text);
+  font-family:var(--font-inter,Inter),Inter,"Helvetica Neue",Arial,sans-serif;
+  font-size:min(64px,calc(100vw * .12));font-weight:var(--fw-bold);letter-spacing:-.045em;line-height:1.2;
+}
+.morph.melting{filter:url(#melt)}
+.w{position:absolute;inset:0;display:grid;place-items:center;white-space:nowrap;will-change:filter,opacity}

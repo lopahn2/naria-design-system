@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Springy Input</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../shared/tokens.css">
+<link rel="stylesheet" href="../shared/base.css">
+<link rel="stylesheet" href="input.css">
+</head>
+<body>
+<span class="badge">Type · Morph</span>
+<div class="f-wrap">
+  <form class="field" id="field" novalidate>
+    <label class="flabel" id="flabel" for="email">Email address</label>
+    <div class="box">
+      <div class="layer"><div class="layer-in" id="layer"></div></div>
+      <input class="email" id="email" type="email" inputmode="email" autocomplete="off" spellcheck="false" aria-describedby="help">
+      <span class="caret" id="caret"></span>
+    </div>
+    <button class="go idle" id="go" type="submit" aria-label="Join the list">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+    </button>
+    <div class="done" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>
+      You're on the list
+    </div>
+  </form>
+  <p class="help" id="help" aria-live="polite"></p>
+</div>
+<script src="../shared/motion.js"></script>
+<script src="input.js"></script>
+</body>
+</html>

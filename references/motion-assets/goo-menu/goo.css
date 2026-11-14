@@ -1,0 +1,31 @@
+/* Goo Menu: a + that pours out liquid bubbles and morphs into a toast */
+.goo{position:absolute;left:50%;top:62%;width:0;height:0}
+.goo-layer,.goo-ui{position:absolute;left:-210px;top:-250px;width:420px;height:320px}
+.goo-layer{filter:url(#goo)}
+.goo-ui{pointer-events:none}
+.blob{position:absolute;left:0;top:0;border-radius:var(--r-pill);background:var(--object);will-change:transform} /* grey, not white (Noah, 9 Nov); pale grey in light */
+.gbtn{
+  position:absolute;left:0;top:0;border:0;background:none;color:var(--text);
+  display:grid;place-items:center;border-radius:var(--r-pill);cursor:pointer;pointer-events:auto;outline:none;touch-action:none;
+}
+.gbtn svg{width:22px;height:22px;display:block}
+.bub{width:48px;height:48px}
+.bub svg{width:20px;height:20px}
+.main{height:64px;overflow:hidden}
+.plus{position:absolute;left:50%;top:50%;width:24px;height:24px;margin:-12px 0 0 -12px;display:grid;place-items:center;transition:opacity .2s}
+.main.toasting .plus{opacity:0}
+.toast{
+  display:flex;align-items:center;gap:8px;white-space:nowrap;
+  font-size:var(--fs-lg);font-weight:var(--fw-medium);letter-spacing:-.01em;line-height:1;
+  opacity:0;filter:blur(4px);transform:translateY(6px);
+  transition:opacity .15s,filter .15s,transform .2s;
+}
+.toast svg{width:20px;height:20px;flex:none}
+.main.toasting .toast{opacity:1;filter:none;transform:none;transition:opacity .35s .08s,filter .35s .08s,transform .5s cubic-bezier(.16,1,.3,1) .08s}
+.tip{
+  position:absolute;left:50%;bottom:calc(100% + 10px);transform:translate(-50%,4px) scale(.9);
+  background:var(--surface);color:var(--text);font-size:var(--fs-xs);font-weight:var(--fw-medium);
+  padding:5px 9px;border-radius:var(--r-pill);white-space:nowrap;pointer-events:none;
+  opacity:0;transition:opacity .15s,transform .25s cubic-bezier(.34,1.56,.64,1);
+}
+.gbtn.hover .tip{opacity:1;transform:translate(-50%,0) scale(1)}

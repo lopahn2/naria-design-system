@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Star Rating</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../shared/tokens.css">
+<link rel="stylesheet" href="../shared/base.css">
+<link rel="stylesheet" href="stars.css">
+</head>
+<body>
+<span class="badge">Inputs · Rating</span>
+<div class="rate" id="rate">
+  <p class="q">How was your stay?</p>
+  <div class="stars" id="stars" role="radiogroup" aria-label="Rating"><button class="st" role="radio" aria-checked="false" aria-label="1 star"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.2l2.6 5.5 6 .8-4.4 4.1 1.1 5.9L12 16.6l-5.3 2.9 1.1-5.9-4.4-4.1 6-.8z"/></svg></button><button class="st" role="radio" aria-checked="false" aria-label="2 stars"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.2l2.6 5.5 6 .8-4.4 4.1 1.1 5.9L12 16.6l-5.3 2.9 1.1-5.9-4.4-4.1 6-.8z"/></svg></button><button class="st" role="radio" aria-checked="false" aria-label="3 stars"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.2l2.6 5.5 6 .8-4.4 4.1 1.1 5.9L12 16.6l-5.3 2.9 1.1-5.9-4.4-4.1 6-.8z"/></svg></button><button class="st" role="radio" aria-checked="false" aria-label="4 stars"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.2l2.6 5.5 6 .8-4.4 4.1 1.1 5.9L12 16.6l-5.3 2.9 1.1-5.9-4.4-4.1 6-.8z"/></svg></button><button class="st" role="radio" aria-checked="false" aria-label="5 stars"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.2l2.6 5.5 6 .8-4.4 4.1 1.1 5.9L12 16.6l-5.3 2.9 1.1-5.9-4.4-4.1 6-.8z"/></svg></button></div>
+  <div class="word"><span class="col" id="col"><b>Tap a star</b><b>Poor</b><b>Okay</b><b>Good</b><b>Great</b><b>Loved it</b></span></div>
+</div>
+<script src="../shared/motion.js"></script>
+<script src="stars.js"></script>
+</body>
+</html>

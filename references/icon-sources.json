@@ -1,0 +1,64 @@
+{
+  "retrievedAt": "2026-11-14",
+  "provider": "Radix Icons / WorkOS",
+  "license": "MIT",
+  "licenseSha": "a18858fb7b014098cba85703e66609be66a26ef5",
+  "files": [
+    {
+      "name": "plus",
+      "path": "src/assets/icons/radix/plus.svg",
+      "url": "https://github.com/radix-ui/icons/blob/main/packages/radix-icons/icons/plus.svg",
+      "sha": "e6939a50087c56ea27a06d1b446a2e6d7201f048",
+      "modification": "none"
+    },
+    {
+      "name": "check",
+      "path": "src/assets/icons/radix/check.svg",
+      "url": "https://github.com/radix-ui/icons/blob/main/packages/radix-icons/icons/check.svg",
+      "sha": "50bee0dd2931a2baeb77eed04c7a030ca9c090ed",
+      "modification": "none"
+    },
+    {
+      "name": "chevron-right",
+      "path": "src/assets/icons/radix/chevron-right.svg",
+      "url": "https://github.com/radix-ui/icons/blob/main/packages/radix-icons/icons/chevron-right.svg",
+      "sha": "6cc0adcfad49b9c71639d177ccddad971057c1f4",
+      "modification": "none"
+    },
+    {
+      "name": "bookmark",
+      "path": "src/assets/icons/radix/bookmark.svg",
+      "url": "https://github.com/radix-ui/icons/blob/main/packages/radix-icons/icons/bookmark.svg",
+      "sha": "6e04799011859e111937f66f9ac0f940bb293877",
+      "modification": "none"
+    },
+    {
+      "name": "magnifying-glass",
+      "path": "src/assets/icons/radix/magnifying-glass.svg",
+      "url": "https://github.com/radix-ui/icons/blob/main/packages/radix-icons/icons/magnifying-glass.svg",
+      "sha": "dd99f41e6a3c0453c9e78ed6bea4c1a817077c40",
+      "modification": "none"
+    },
+    {
+      "name": "arrow-right",
+      "path": "src/assets/icons/radix/arrow-right.svg",
+      "url": "https://github.com/radix-ui/icons/blob/main/packages/radix-icons/icons/arrow-right.svg",
+      "sha": "8830548c31471e5038a105e2e7daa1be8ee6179b",
+      "modification": "none"
+    },
+    {
+      "name": "cross-2",
+      "path": "src/assets/icons/radix/cross-2.svg",
+      "url": "https://github.com/radix-ui/icons/blob/main/packages/radix-icons/icons/cross-2.svg",
+      "sha": "541359c02110d1012576165e9dc7bf5b34dccfd9",
+      "modification": "none"
+    },
+    {
+      "name": "reader",
+      "path": "src/assets/icons/radix/reader.svg",
+      "url": "https://github.com/radix-ui/icons/blob/main/packages/radix-icons/icons/reader.svg",
+      "sha": "9183158a5c44d152481d10ada1443194810b7007",
+      "modification": "none"
+    }
+  ]
+}

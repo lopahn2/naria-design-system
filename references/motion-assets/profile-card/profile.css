@@ -1,0 +1,24 @@
+/* Profile Card: Follow morphs into a narrower Following button and makes room
+   for Message, the avatar pops and the follower count rolls up digit by digit. */
+.pro{
+  position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
+  width:min(320px,calc(100vw - 48px));padding:18px;border-radius:24px;background:var(--surface);
+  font-family:var(--font-inter,Inter),Inter,"Helvetica Neue",Arial,sans-serif;
+}
+.who{display:flex;align-items:center;gap:12px}
+.av{flex:none;width:52px;height:52px;border-radius:50%;will-change:transform}
+.name{font-size:var(--fs-lg);font-weight:var(--fw-bold);line-height:21px;color:var(--text)}
+.handle{font-size:var(--fs-sm);line-height:18px;color:var(--muted)}
+.bio{margin:14px 0;font-size:var(--fs-md);line-height:20px;color:var(--text-2)}
+.stats{display:flex;gap:16px;font-size:var(--fs-sm);color:var(--muted);white-space:nowrap}
+.stats b{display:inline-flex;line-height:1.25em;font-weight:var(--fw-bold);color:var(--text);font-variant-numeric:tabular-nums}
+.dg{display:inline-block;height:1.25em;overflow:hidden}
+.dg>span{display:block;will-change:transform}
+.dg i{display:block;height:1.25em;font-style:normal}
+.acts{position:relative;height:40px;margin-top:16px}
+.acts button{position:absolute;top:0;height:40px;border:0;border-radius:var(--r-pill);cursor:pointer;font:inherit;font-size:var(--fs-md);font-weight:var(--fw-bold)}
+.follow{left:0;overflow:hidden;background:var(--fill-2);color:var(--text);will-change:width}
+.follow .bg{position:absolute;inset:0;background:var(--inverse)}
+.follow .l{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;will-change:transform,opacity}
+.follow .a{color:var(--on-inverse)}
+.msg{right:0;background:var(--fill-2);color:var(--text);will-change:transform,opacity}

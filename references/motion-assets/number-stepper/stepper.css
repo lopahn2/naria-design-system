@@ -1,0 +1,11 @@
+/* Number Stepper: minus and plus roll the number up or down. At the limit
+   the button shakes no and the number nudges, so you feel the wall. */
+.stp{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:min(320px,calc(100vw - 48px));display:flex;align-items:center;justify-content:space-between;padding:16px 16px 16px 20px;border-radius:24px;background:var(--surface);font-family:var(--font-inter,Inter),Inter,"Helvetica Neue",Arial,sans-serif;}
+.txt b{display:block;font-size:var(--fs-lg);font-weight:var(--fw-medium);color:var(--text)}
+.txt span{display:block;white-space:nowrap;font-size:var(--fs-xs);color:var(--muted);margin-top:2px}
+.ctl{display:flex;align-items:center;gap:6px}
+.b{width:40px;height:40px;border:0;border-radius:50%;background:var(--fill-2);color:var(--text);cursor:pointer;display:grid;place-items:center;will-change:transform;transition:opacity .2s}
+.b.off{opacity:.4}
+.b svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-linecap:round;stroke-linejoin:round;stroke-width:2.2}
+.num{position:relative;width:40px;height:32px;overflow:hidden;font-size:24px;font-weight:var(--fw-bold);font-variant-numeric:tabular-nums;color:var(--text);will-change:transform}
+.num span{position:absolute;inset:0;display:grid;place-items:center;will-change:transform,opacity}

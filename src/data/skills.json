@@ -1,0 +1,452 @@
+[
+  {
+    "id": "frontend-design",
+    "name": "Frontend Design",
+    "category": "direction",
+    "url": "https://github.com/anthropics/skills/blob/main/skills/frontend-design/SKILL.md",
+    "sha": "a5333457c414d20d625f307df945842c0952ecc3",
+    "review": "스킬 본문 검토",
+    "scope": "웹 적용 후보"
+  },
+  {
+    "id": "impeccable",
+    "name": "Impeccable",
+    "category": "direction",
+    "url": "https://github.com/pbakaus/impeccable/blob/main/README.md",
+    "sha": "8a79cb56fc9cbdd931723d869e11dc64e9d8d137",
+    "review": "저장소 개요 검토",
+    "scope": "웹 적용 후보"
+  },
+  {
+    "id": "ui-ux-pro-max-skill",
+    "name": "UI UX Pro Max",
+    "category": "direction",
+    "url": "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill/blob/main/README.md",
+    "sha": "abfcb7404e5acb85832a983a86f0f5bcb438c960",
+    "review": "저장소 개요 검토",
+    "scope": "웹 적용 후보"
+  },
+  {
+    "id": "refero-design",
+    "name": "Refero Design",
+    "category": "direction",
+    "url": "https://github.com/referodesign/refero_skill/blob/master/skills/refero-design/SKILL.md",
+    "sha": "9ac6970ce8e02fbc90e9bda4c2750daf1462f45c",
+    "review": "스킬 본문 검토",
+    "scope": "웹 적용 후보"
+  },
+  {
+    "id": "emil-design-eng",
+    "name": "Design Engineering",
+    "category": "direction",
+    "url": "https://github.com/emilkowalski/skills/blob/main/skills/emil-design-eng/SKILL.md",
+    "sha": "5155a4bf33e99028645dbdad4c049a3d209b1f21",
+    "review": "스킬 본문 검토",
+    "scope": "웹 적용 후보"
+  },
+  {
+    "id": "apple-design",
+    "name": "Apple Design",
+    "category": "direction",
+    "url": "https://github.com/emilkowalski/skills/blob/main/skills/apple-design/SKILL.md",
+    "sha": "97ec82d4ef630ff7f6f2fd283dc04702a63fcea4",
+    "review": "스킬 본문 검토",
+    "scope": "웹 적용 후보"
+  },
+  {
+    "id": "frontend-ui-engineering",
+    "name": "Frontend UI Engineering",
+    "category": "direction",
+    "url": "https://github.com/addyosmani/agent-skills/blob/main/skills/frontend-ui-engineering/SKILL.md",
+    "sha": "556b9878808486abb0d3e39daa985e6e34fa341c",
+    "review": "스킬 본문 검토",
+    "scope": "웹 적용 후보"
+  },
+  {
+    "id": "web-design-guidelines",
+    "name": "Web Design Guidelines",
+    "category": "review",
+    "url": "https://github.com/vercel-labs/agent-skills/blob/main/skills/web-design-guidelines/SKILL.md",
+    "sha": "ceae92ab319216a68274168fba9b63b998b65997",
+    "review": "스킬 본문 검토",
+    "scope": "웹 적용 후보"
+  },
+  {
+    "id": "better-interface",
+    "name": "better-interface",
+    "category": "review",
+    "url": "https://github.com/jakubkrehel/skills/blob/main/skills/better-interface/SKILL.md",
+    "sha": "11a75671a0cca1d24aeb6d70007aff6079c85696",
+    "review": "스킬 본문 검토",
+    "scope": "웹 적용 후보"
+  },
+  {
+    "id": "interface-review",
+    "name": "interface-review",
+    "category": "review",
+    "url": "https://github.com/jakubkrehel/skills/blob/main/skills/interface-review/SKILL.md",
+    "sha": "3b14135fedc6ba71738070312024a0931d50cff1",
+    "review": "스킬 본문 검토",
+    "scope": "웹 적용 후보"
+  },
+  {
+    "id": "better-ui",
+    "name": "better-ui",
+    "category": "review",
+    "url": "https://github.com/jakubkrehel/skills/blob/main/skills/better-ui/SKILL.md",
+    "sha": "b8abea328cfc49549423adce6674af7f50cce044",
+    "review": "스킬 본문 검토",
+    "scope": "웹 적용 후보"
+  },
+  {
+    "id": "better-typography",
+    "name": "better-typography",
+    "category": "review",
+    "url": "https://github.com/jakubkrehel/skills/blob/main/skills/better-typography/SKILL.md",
+    "sha": "843e22d6c32b930d8aa225d7150201bf6f6c80b6",
+    "review": "스킬 본문 검토",
+    "scope": "웹 적용 후보"
+  },
+  {
+    "id": "better-colors",
+    "name": "better-colors",
+    "category": "review",
+    "url": "https://github.com/jakubkrehel/skills/blob/main/skills/better-colors/SKILL.md",
+    "sha": "e0b3049b65a4e369217ca5f67b89ad3adf311fa0",
+    "review": "스킬 본문 검토",
+    "scope": "웹 적용 후보"
+  },
+  {
+    "id": "better-layout",
+    "name": "better-layout",
+    "category": "review",
+    "url": "https://github.com/jakubkrehel/skills/blob/main/skills/better-layout/SKILL.md",
+    "sha": "6d6663c8a94f1f2369a053002b9b619c63abb982",
+    "review": "스킬 본문 검토",
+    "scope": "웹 적용 후보"
+  },
+  {
+    "id": "break-ui",
+    "name": "Break UI",
+    "category": "review",
+    "url": "https://github.com/emilkowalski/skills/blob/main/skills/break-ui/SKILL.md",
+    "sha": "52be42ffb02f252e889b8ac3a45b97d9f7a0c36c",
+    "review": "스킬 본문 검토",
+    "scope": "웹 적용 후보"
+  },
+  {
+    "id": "accessibility",
+    "name": "Accessibility",
+    "category": "review",
+    "url": "https://github.com/addyosmani/web-quality-skills/blob/main/skills/accessibility/SKILL.md",
+    "sha": "22a244430f890fe44cbd7a50590d5cbf8528c77b",
+    "review": "스킬 본문 검토",
+    "scope": "웹 적용 후보"
+  },
+  {
+    "id": "better-accessibility",
+    "name": "Better Accessibility",
+    "category": "review",
+    "url": "https://github.com/jakubkrehel/skills/blob/main/skills/better-accessibility/SKILL.md",
+    "sha": "919aff85f66061c116b50f5dd78c695f32147cb0",
+    "review": "스킬 본문 검토",
+    "scope": "웹 적용 후보"
+  },
+  {
+    "id": "prototype",
+    "name": "Prototype",
+    "category": "build",
+    "url": "https://github.com/emilkowalski/skills/blob/main/skills/prototype/SKILL.md",
+    "sha": "56a648d217a8665f2acdf9d6f6a21bbfb5a325f3",
+    "review": "스킬 본문 검토",
+    "scope": "웹 적용 후보"
+  },
+  {
+    "id": "variant",
+    "name": "variant",
+    "category": "build",
+    "url": "https://github.com/jakubkrehel/skills/blob/main/skills/variant/SKILL.md",
+    "sha": "45c3a5491800a6808433cf8452812c519578c404",
+    "review": "스킬 본문 검토",
+    "scope": "웹 적용 후보"
+  },
+  {
+    "id": "build-design",
+    "name": "build-design",
+    "category": "build",
+    "url": "https://github.com/jakubkrehel/skills/blob/main/skills/build-design/SKILL.md",
+    "sha": "f598b6e37c9e58e2e4913250df317a9dfd0bd517",
+    "review": "스킬 본문 검토",
+    "scope": "웹 적용 후보"
+  },
+  {
+    "id": "explain-interface",
+    "name": "explain-interface",
+    "category": "build",
+    "url": "https://github.com/jakubkrehel/skills/blob/main/skills/explain-interface/SKILL.md",
+    "sha": "c40dacde86b60bd698a0313287731257ed581fb1",
+    "review": "스킬 본문 검토",
+    "scope": "웹 적용 후보"
+  },
+  {
+    "id": "pick-ui-library",
+    "name": "Pick UI Library",
+    "category": "build",
+    "url": "https://github.com/emilkowalski/skills/blob/main/skills/pick-ui-library/SKILL.md",
+    "sha": "fca76b8792f0b2e72623a25ffb182c2c46d3fbc0",
+    "review": "스킬 본문 검토",
+    "scope": "웹 적용 후보"
+  },
+  {
+    "id": "shadcn",
+    "name": "shadcn/ui",
+    "category": "build",
+    "url": "https://github.com/shadcn-ui/ui/blob/main/skills/shadcn/SKILL.md",
+    "sha": "54da13fb6fdca971ec9ee4651cf5ff2cdab2236d",
+    "review": "스킬 본문 검토",
+    "scope": "웹 적용 후보"
+  },
+  {
+    "id": "tailwind-design-system",
+    "name": "Tailwind Design System",
+    "category": "build",
+    "url": "https://github.com/wshobson/agents/blob/main/plugins/frontend-mobile-development/skills/tailwind-design-system/SKILL.md",
+    "sha": "17c4fd0ec99c26254e58288b7219dfe44d0a20ba",
+    "review": "스킬 본문 검토",
+    "scope": "웹 적용 후보"
+  },
+  {
+    "id": "stitch-skills",
+    "name": "Stitch Skills",
+    "category": "build",
+    "url": "https://github.com/google-labs-code/stitch-skills/blob/main/README.md",
+    "sha": "baecaabfa0fc08d596e3d5921479321eaacac02a",
+    "review": "저장소 개요 검토",
+    "scope": "웹 적용 후보"
+  },
+  {
+    "id": "animate",
+    "name": "animate",
+    "category": "motion",
+    "url": "https://github.com/emilkowalski/skills/blob/main/skills/animate/SKILL.md",
+    "sha": "69338805e0ea1c77d6f4c1987d516f46b1657819",
+    "review": "스킬 본문 검토",
+    "scope": "웹 적용 후보"
+  },
+  {
+    "id": "review-animations",
+    "name": "review-animations",
+    "category": "motion",
+    "url": "https://github.com/emilkowalski/skills/blob/main/skills/review-animations/SKILL.md",
+    "sha": "70bb73c016d0dafc28c03272a205cd97ece9f06d",
+    "review": "스킬 본문 검토",
+    "scope": "웹 적용 후보"
+  },
+  {
+    "id": "improve-animations",
+    "name": "improve-animations",
+    "category": "motion",
+    "url": "https://github.com/emilkowalski/skills/blob/main/skills/improve-animations/SKILL.md",
+    "sha": "fb85fcc8c1707010ac0c64250d8a56ed0a68fe2d",
+    "review": "스킬 본문 검토",
+    "scope": "웹 적용 후보"
+  },
+  {
+    "id": "find-animation-opportunities",
+    "name": "find-animation-opportunities",
+    "category": "motion",
+    "url": "https://github.com/emilkowalski/skills/blob/main/skills/find-animation-opportunities/SKILL.md",
+    "sha": "8a72a1931e82d21ae24cd00834f4f0aaebf58a60",
+    "review": "스킬 본문 검토",
+    "scope": "웹 적용 후보"
+  },
+  {
+    "id": "choreograph",
+    "name": "choreograph",
+    "category": "motion",
+    "url": "https://github.com/emilkowalski/skills/blob/main/skills/choreograph/SKILL.md",
+    "sha": "965f7b1ee991adbbc301401cf2f6f6890b247572",
+    "review": "스킬 본문 검토",
+    "scope": "웹 적용 후보"
+  },
+  {
+    "id": "remove-animations",
+    "name": "remove-animations",
+    "category": "motion",
+    "url": "https://github.com/emilkowalski/skills/blob/main/skills/remove-animations/SKILL.md",
+    "sha": "ccd6070c53575a9e96995de805eee9ad7d81bc58",
+    "review": "스킬 본문 검토",
+    "scope": "웹 적용 후보"
+  },
+  {
+    "id": "animation-vocabulary",
+    "name": "animation-vocabulary",
+    "category": "motion",
+    "url": "https://github.com/emilkowalski/skills/blob/main/skills/animation-vocabulary/SKILL.md",
+    "sha": "e976138ced9ba6e9ecc3d65236c9ec24b753d9c0",
+    "review": "스킬 본문 검토",
+    "scope": "웹 적용 후보"
+  },
+  {
+    "id": "animation-performance",
+    "name": "animation-performance",
+    "category": "motion",
+    "url": "https://github.com/emilkowalski/skills/blob/main/skills/animation-performance/SKILL.md",
+    "sha": "c7dd441dde8d597c877e851ed9f9601249351591",
+    "review": "스킬 본문 검토",
+    "scope": "웹 적용 후보"
+  },
+  {
+    "id": "gsap-core",
+    "name": "gsap-core",
+    "category": "motion",
+    "url": "https://github.com/greensock/gsap-skills/blob/main/skills/gsap-core/SKILL.md",
+    "sha": "98639432f4112b664aa5e53cf5d8ea1a4697eff9",
+    "review": "스킬 본문 검토",
+    "scope": "웹 적용 후보"
+  },
+  {
+    "id": "gsap-scrolltrigger",
+    "name": "gsap-scrolltrigger",
+    "category": "motion",
+    "url": "https://github.com/greensock/gsap-skills/blob/main/skills/gsap-scrolltrigger/SKILL.md",
+    "sha": "6d8c09f2136c108595c9e0db859c4a39460e99cf",
+    "review": "스킬 본문 검토",
+    "scope": "웹 적용 후보"
+  },
+  {
+    "id": "react-view-transitions",
+    "name": "React View Transitions",
+    "category": "motion",
+    "url": "https://github.com/vercel-labs/agent-skills/blob/main/skills/react-view-transitions/SKILL.md",
+    "sha": "665db73fe55b2504d1123857f14606472cdefd0a",
+    "review": "스킬 본문 검토",
+    "scope": "웹 적용 후보"
+  },
+  {
+    "id": "figma-use",
+    "name": "figma-use",
+    "category": "figma",
+    "url": "https://github.com/figma/mcp-server-guide/blob/main/skills/figma-use/SKILL.md",
+    "sha": "4d2f69bddecf04f33fbed6710c3aaa82cb90d4a5",
+    "review": "스킬 본문 검토",
+    "scope": "보조 참고"
+  },
+  {
+    "id": "figma-design-to-code",
+    "name": "figma-design-to-code",
+    "category": "figma",
+    "url": "https://github.com/figma/mcp-server-guide/blob/main/skills/figma-design-to-code/SKILL.md",
+    "sha": "28ce6fede308673cf0c07ff21865d2d59c36b0d4",
+    "review": "스킬 본문 검토",
+    "scope": "보조 참고"
+  },
+  {
+    "id": "figma-generate-design",
+    "name": "figma-generate-design",
+    "category": "figma",
+    "url": "https://github.com/figma/mcp-server-guide/blob/main/skills/figma-generate-design/SKILL.md",
+    "sha": "32e7817bd234109f4ef7291dc619f297a62eb060",
+    "review": "스킬 본문 검토",
+    "scope": "보조 참고"
+  },
+  {
+    "id": "figma-generate-library",
+    "name": "figma-generate-library",
+    "category": "figma",
+    "url": "https://github.com/figma/mcp-server-guide/blob/main/skills/figma-generate-library/SKILL.md",
+    "sha": "37643ec1b197e9af15b34b02f401ad2e2481adee",
+    "review": "스킬 본문 검토",
+    "scope": "보조 참고"
+  },
+  {
+    "id": "expo-native-ui",
+    "name": "expo-native-ui",
+    "category": "mobile",
+    "url": "https://github.com/expo/skills/blob/main/plugins/expo/skills/expo-native-ui/SKILL.md",
+    "sha": "28599956991d244e2c7036a729e4551bfc59893d",
+    "review": "스킬 본문 검토",
+    "scope": "네이티브 확장 참고"
+  },
+  {
+    "id": "expo-design-system",
+    "name": "expo-design-system",
+    "category": "mobile",
+    "url": "https://github.com/expo/skills/blob/main/plugins/expo/skills/expo-design-system/SKILL.md",
+    "sha": "e8181f7a2a22da0e41466dccaa8d0208c694ff4c",
+    "review": "스킬 본문 검토",
+    "scope": "네이티브 확장 참고"
+  },
+  {
+    "id": "expo-animation",
+    "name": "expo-animation",
+    "category": "mobile",
+    "url": "https://github.com/expo/skills/blob/main/plugins/expo/skills/expo-animation/SKILL.md",
+    "sha": "2f0a9d1d5be373101ad1ecde01598eb0b92bb26a",
+    "review": "스킬 본문 검토",
+    "scope": "네이티브 확장 참고"
+  },
+  {
+    "id": "mobile-native",
+    "name": "Mobile Native",
+    "category": "mobile",
+    "url": "https://github.com/emilkowalski/skills/blob/main/skills/mobile-native/SKILL.md",
+    "sha": "b97d73d9bd5f6b283b03588b852b7a2ad3764673",
+    "review": "스킬 본문 검토",
+    "scope": "웹 적용 후보"
+  },
+  {
+    "id": "canvas-design",
+    "name": "canvas-design",
+    "category": "graphics",
+    "url": "https://github.com/anthropics/skills/blob/main/skills/canvas-design/SKILL.md",
+    "sha": "9f63fee82de84cd4230e1d0e322247b61eb4c94c",
+    "review": "스킬 본문 검토",
+    "scope": "보조 참고"
+  },
+  {
+    "id": "theme-factory",
+    "name": "theme-factory",
+    "category": "graphics",
+    "url": "https://github.com/anthropics/skills/blob/main/skills/theme-factory/SKILL.md",
+    "sha": "90dfceaf2ecdc191a4dcfb0069768a9560638998",
+    "review": "스킬 본문 검토",
+    "scope": "보조 참고"
+  },
+  {
+    "id": "algorithmic-art",
+    "name": "algorithmic-art",
+    "category": "graphics",
+    "url": "https://github.com/anthropics/skills/blob/main/skills/algorithmic-art/SKILL.md",
+    "sha": "634f6fa42e4e697fa6afd293acd7fb8246574876",
+    "review": "스킬 본문 검토",
+    "scope": "보조 참고"
+  },
+  {
+    "id": "banner-design",
+    "name": "Banner Design",
+    "category": "graphics",
+    "url": "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill/blob/main/.claude/skills/banner-design/SKILL.md",
+    "sha": "79fa5ee1884ce1b9f76627a1bea073d3dd67ee7b",
+    "review": "스킬 본문 검토",
+    "scope": "보조 참고"
+  },
+  {
+    "id": "archify",
+    "name": "Archify",
+    "category": "graphics",
+    "url": "https://github.com/tt-a1i/archify/blob/main/archify/SKILL.md",
+    "sha": "380de2c1016ee24910d425d74cc0efc91d426be9",
+    "review": "스킬 본문 검토",
+    "scope": "보조 참고"
+  },
+  {
+    "id": "remotion-best-practices",
+    "name": "Remotion",
+    "category": "graphics",
+    "url": "https://github.com/remotion-dev/skills/blob/main/skills/remotion-best-practices/SKILL.md",
+    "sha": "19c831fd7a434bb5e89b7b5890356b6637b1cb21",
+    "review": "스킬 본문 검토",
+    "scope": "보조 참고"
+  }
+]

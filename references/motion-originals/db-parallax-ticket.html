@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Parallax Ticket</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../shared/tokens.css">
+<link rel="stylesheet" href="../shared/base.css">
+<link rel="stylesheet" href="ticket.css">
+</head>
+<body>
+<span class="badge">Parallax · Reveal</span>
+<div class="t-stage" id="stage">
+  <div class="ticket" id="ticket" role="button" tabindex="0" aria-pressed="false" aria-label="Motion Night ticket. Press to flip">
+    <div class="side front">
+      <div class="layer l-bg" data-depth=".25"></div>
+      <div class="shade"></div>
+      <div class="layer l-text" data-depth=".9">
+        <div class="title">Motion<br>Night</div>
+        <div class="meta">
+          <span>Oct 30 · 20:00 · Lisbon</span>
+          <b>No. 0042</b>
+        </div>
+      </div>
+      <div class="glare" id="glare"></div>
+    </div>
+    <div class="side back">
+      <div class="qr" id="qr"></div>
+      <div class="seat"><div>Row<b>C</b></div><div>Seat<b>12</b></div><div>Gate<b>2</b></div></div>
+      <span class="flip-hint">Tap to flip back</span>
+    </div>
+  </div>
+</div>
+<script src="../shared/motion.js"></script>
+<script src="ticket.js"></script>
+</body>
+</html>

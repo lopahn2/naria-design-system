@@ -1,0 +1,12 @@
+/* Tag Input: type a word, press Enter, and the word turns into a chip that
+   pops into the row. The x shrinks a chip away and the others slide over. */
+.tagbox{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:min(320px,calc(100vw - 48px));font-family:var(--font-inter,Inter),Inter,"Helvetica Neue",Arial,sans-serif;}
+.lab{font-size:var(--fs-sm);color:var(--muted);margin:0 0 8px 4px}
+.help{font-size:var(--fs-xs);color:var(--muted-2);margin:8px 0 0 4px}
+.field{display:flex;flex-wrap:wrap;align-items:center;gap:6px;min-height:52px;padding:8px;border-radius:18px;background:var(--surface);cursor:text}
+.chip{display:inline-flex;align-items:center;height:32px;border-radius:10px;background:var(--fill-2);color:var(--text);font-size:var(--fs-md);font-weight:var(--fw-medium);white-space:nowrap;overflow:hidden;will-change:transform,opacity,width}
+.chip .in{display:inline-flex;align-items:center;gap:4px;padding:0 6px 0 11px}
+.chip button{width:20px;height:20px;padding:0;border:0;border-radius:6px;background:none;color:var(--muted);cursor:pointer;display:grid;place-items:center}
+.chip button svg{width:14px;height:14px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round}
+#inp{flex:1;min-width:90px;height:32px;padding:0 6px;border:0;outline:0;background:none;color:var(--text);font:inherit;font-size:var(--fs-base)}
+#inp::placeholder{color:var(--muted-2)}

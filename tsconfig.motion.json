@@ -1,0 +1,8 @@
+{
+  "extends":"./tsconfig.json",
+  "compilerOptions":{
+    "baseUrl":".",
+    "paths":{"@/lib/utils":["motion/utils.ts"],"@/components/ui/button":["motion/primitives.tsx"],"@/components/ui/card":["motion/primitives.tsx"]}
+  },
+  "include":["motion/**/*.tsx","motion/**/*.ts"]
+}

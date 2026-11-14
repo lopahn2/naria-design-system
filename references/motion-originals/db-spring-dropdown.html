@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Spring Dropdown</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../shared/tokens.css">
+<link rel="stylesheet" href="../shared/base.css">
+<link rel="stylesheet" href="dropdown.css">
+</head>
+<body>
+<span class="badge">Inputs · Dropdown</span>
+<div class="dd" id="dd">
+  <button class="trig" id="trig" aria-haspopup="listbox" aria-expanded="false" aria-controls="menu" aria-label="Status">
+    <span class="val">
+      <span class="slot" id="va"><i class="dot"></i><b>In progress</b></span>
+      <span class="slot" id="vb"><i class="dot"></i><b></b></span>
+    </span>
+    <svg class="chev" id="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+  </button>
+  <div class="menu" id="menu" role="listbox" aria-label="Status">
+    <i class="hl" id="hl"></i>
+    <div class="opt" id="o0" role="option" aria-selected="false" data-c="#8f8f8f"><i class="dot"></i><b>Backlog</b><svg class="tick" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div>
+    <div class="opt" id="o1" role="option" aria-selected="true" data-c="#ff9f0a"><i class="dot"></i><b>In progress</b><svg class="tick" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div>
+    <div class="opt" id="o2" role="option" aria-selected="false" data-c="#7b8cff"><i class="dot"></i><b>In review</b><svg class="tick" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div>
+    <div class="opt" id="o3" role="option" aria-selected="false" data-c="#34d17a"><i class="dot"></i><b>Done</b><svg class="tick" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div>
+  </div>
+</div>
+<script src="../shared/motion.js"></script>
+<script src="dropdown.js"></script>
+</body>
+</html>

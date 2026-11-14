@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Plan Switch</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../shared/tokens.css">
+<link rel="stylesheet" href="../shared/base.css">
+<link rel="stylesheet" href="plan.css">
+</head>
+<body>
+<span class="badge">Cards · Pricing</span>
+<div class="card" id="card">
+  <div class="seg" role="radiogroup" aria-label="Billing">
+    <span class="hl" id="hl" aria-hidden="true"></span>
+    <button role="radio" aria-checked="false" id="bMonth">Monthly</button>
+    <button role="radio" aria-checked="true" id="bYear">Yearly</button>
+  </div>
+  <div class="plan">
+    <div class="name"><span>Pro</span><span class="save" id="save">Save 20%</span></div>
+    <div class="price"><span class="cur">$</span><span class="num" id="price" aria-hidden="true"></span><span class="per">/mo</span></div>
+    <div class="bill roll-line" id="bill" aria-live="polite"></div>
+  </div>
+  <ul class="feats" id="feats">
+    <li><span class="ck"><svg viewBox="0 0 24 24"><path d="M6 12.5l4 4 8-9"/></svg></span>Unlimited projects</li>
+    <li><span class="ck"><svg viewBox="0 0 24 24"><path d="M6 12.5l4 4 8-9"/></svg></span>Team seats and roles</li>
+    <li class="extra" id="extra"><span class="ck is-green"><svg viewBox="0 0 24 24"><path d="M6 12.5l4 4 8-9"/></svg></span>Two months free</li>
+  </ul>
+  <button class="cta" id="cta"><span class="cta-in" id="ctaIn"></span></button>
+</div>
+<script src="../shared/motion.js"></script>
+<script src="plan.js"></script>
+</body>
+</html>

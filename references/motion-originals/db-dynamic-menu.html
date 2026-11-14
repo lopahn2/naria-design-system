@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Dynamic Menu</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../shared/tokens.css">
+<link rel="stylesheet" href="../shared/base.css">
+<link rel="stylesheet" href="menu.css">
+</head>
+<body>
+<span class="badge">Navigation · Menu</span>
+<div class="menu" id="menu">
+  <button class="head" id="head" aria-expanded="false" aria-controls="links">
+    <span class="brand">Studio</span>
+    <span class="tog"><i id="b1"></i><i id="b2"></i></span>
+  </button>
+  <ul class="links" id="links">
+    <li><a href="#">Work</a><span>12</span></li><li><a href="#">About</a></li><li><a href="#">Journal</a><span>New</span></li><li><a href="#">Contact</a></li>
+  </ul>
+</div>
+<script src="../shared/motion.js"></script>
+<script src="menu.js"></script>
+</body>
+</html>

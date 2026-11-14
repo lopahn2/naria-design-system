@@ -1,0 +1,986 @@
+[
+  {
+    "id": "button",
+    "pattern": false,
+    "theme": "light",
+    "violations": []
+  },
+  {
+    "id": "icon-button",
+    "pattern": false,
+    "theme": "light",
+    "violations": []
+  },
+  {
+    "id": "link",
+    "pattern": false,
+    "theme": "light",
+    "violations": []
+  },
+  {
+    "id": "button-group",
+    "pattern": false,
+    "theme": "light",
+    "violations": []
+  },
+  {
+    "id": "split-button",
+    "pattern": false,
+    "theme": "light",
+    "violations": []
+  },
+  {
+    "id": "toggle-button",
+    "pattern": false,
+    "theme": "light",
+    "violations": []
+  },
+  {
+    "id": "copy-button",
+    "pattern": false,
+    "theme": "light",
+    "violations": []
+  },
+  {
+    "id": "hold-button",
+    "pattern": false,
+    "theme": "light",
+    "violations": []
+  },
+  {
+    "id": "field",
+    "pattern": false,
+    "theme": "light",
+    "violations": []
+  },
+  {
+    "id": "text-field",
+    "pattern": false,
+    "theme": "light",
+    "violations": []
+  },
+  {
+    "id": "textarea",
+    "pattern": false,
+    "theme": "light",
+    "violations": []
+  },
+  {
+    "id": "password-field",
+    "pattern": false,
+    "theme": "light",
+    "violations": []
+  },
+  {
+    "id": "search-field",
+    "pattern": false,
+    "theme": "light",
+    "violations": []
+  },
+  {
+    "id": "number-field",
+    "pattern": false,
+    "theme": "light",
+    "violations": []
+  },
+  {
+    "id": "select",
+    "pattern": false,
+    "theme": "light",
+    "violations": []
+  },
+  {
+    "id": "combobox",
+    "pattern": false,
+    "theme": "light",
+    "violations": []
+  },
+  {
+    "id": "multi-select",
+    "pattern": false,
+    "theme": "light",
+    "violations": []
+  },
+  {
+    "id": "checkbox",
+    "pattern": false,
+    "theme": "light",
+    "violations": []
+  },
+  {
+    "id": "radio-group",
+    "pattern": false,
+    "theme": "light",
+    "violations": []
+  },
+  {
+    "id": "switch",
+    "pattern": false,
+    "theme": "light",
+    "violations": []
+  },
+  {
+    "id": "slider",
+    "pattern": false,
+    "theme": "light",
+    "violations": []
+  },
+  {
+    "id": "rating",
+    "pattern": false,
+    "theme": "light",
+    "violations": []
+  },
+  {
+    "id": "otp-input",
+    "pattern": false,
+    "theme": "light",
+    "violations": []
+  },
+  {
+    "id": "file-upload",
+    "pattern": false,
+    "theme": "light",
+    "violations": []
+  },
+  {
+    "id": "date-picker",
+    "pattern": false,
+    "theme": "light",
+    "violations": []
+  },
+  {
+    "id": "date-range-picker",
+    "pattern": false,
+    "theme": "light",
+    "violations": []
+  },
+  {
+    "id": "time-picker",
+    "pattern": false,
+    "theme": "light",
+    "violations": []
+  },
+  {
+    "id": "color-picker",
+    "pattern": false,
+    "theme": "light",
+    "violations": []
+  },
+  {
+    "id": "calendar",
+    "pattern": false,
+    "theme": "light",
+    "violations": []
+  },
+  {
+    "id": "agreement",
+    "pattern": false,
+    "theme": "light",
+    "violations": []
+  },
+  {
+    "id": "tabs",
+    "pattern": false,
+    "theme": "light",
+    "violations": []
+  },
+  {
+    "id": "segmented-control",
+    "pattern": false,
+    "theme": "light",
+    "violations": []
+  },
+  {
+    "id": "breadcrumb",
+    "pattern": false,
+    "theme": "light",
+    "violations": []
+  },
+  {
+    "id": "pagination",
+    "pattern": false,
+    "theme": "light",
+    "violations": []
+  },
+  {
+    "id": "stepper",
+    "pattern": false,
+    "theme": "light",
+    "violations": []
+  },
+  {
+    "id": "navigation-bar",
+    "pattern": false,
+    "theme": "light",
+    "violations": []
+  },
+  {
+    "id": "side-navigation",
+    "pattern": false,
+    "theme": "light",
+    "violations": []
+  },
+  {
+    "id": "bottom-navigation",
+    "pattern": false,
+    "theme": "light",
+    "violations": []
+  },
+  {
+    "id": "command-palette",
+    "pattern": false,
+    "theme": "light",
+    "violations": []
+  },
+  {
+    "id": "card",
+    "pattern": false,
+    "theme": "light",
+    "violations": []
+  },
+  {
+    "id": "list-row",
+    "pattern": false,
+    "theme": "light",
+    "violations": []
+  },
+  {
+    "id": "accordion",
+    "pattern": false,
+    "theme": "light",
+    "violations": []
+  },
+  {
+    "id": "divider",
+    "pattern": false,
+    "theme": "light",
+    "violations": []
+  },
+  {
+    "id": "avatar",
+    "pattern": false,
+    "theme": "light",
+    "violations": []
+  },
+  {
+    "id": "avatar-group",
+    "pattern": false,
+    "theme": "light",
+    "violations": []
+  },
+  {
+    "id": "badge",
+    "pattern": false,
+    "theme": "light",
+    "violations": []
+  },
+  {
+    "id": "tag",
+    "pattern": false,
+    "theme": "light",
+    "violations": []
+  },
+  {
+    "id": "tooltip",
+    "pattern": false,
+    "theme": "light",
+    "violations": []
+  },
+  {
+    "id": "scroll-area",
+    "pattern": false,
+    "theme": "light",
+    "violations": []
+  },
+  {
+    "id": "carousel",
+    "pattern": false,
+    "theme": "light",
+    "violations": []
+  },
+  {
+    "id": "dialog",
+    "pattern": false,
+    "theme": "light",
+    "violations": []
+  },
+  {
+    "id": "alert-dialog",
+    "pattern": false,
+    "theme": "light",
+    "violations": []
+  },
+  {
+    "id": "drawer",
+    "pattern": false,
+    "theme": "light",
+    "violations": []
+  },
+  {
+    "id": "bottom-sheet",
+    "pattern": false,
+    "theme": "light",
+    "violations": []
+  },
+  {
+    "id": "popover",
+    "pattern": false,
+    "theme": "light",
+    "violations": []
+  },
+  {
+    "id": "dropdown-menu",
+    "pattern": false,
+    "theme": "light",
+    "violations": []
+  },
+  {
+    "id": "alert",
+    "pattern": false,
+    "theme": "light",
+    "violations": []
+  },
+  {
+    "id": "toast",
+    "pattern": false,
+    "theme": "light",
+    "violations": []
+  },
+  {
+    "id": "progress",
+    "pattern": false,
+    "theme": "light",
+    "violations": []
+  },
+  {
+    "id": "spinner",
+    "pattern": false,
+    "theme": "light",
+    "violations": []
+  },
+  {
+    "id": "skeleton",
+    "pattern": false,
+    "theme": "light",
+    "violations": []
+  },
+  {
+    "id": "empty-state",
+    "pattern": false,
+    "theme": "light",
+    "violations": []
+  },
+  {
+    "id": "result",
+    "pattern": false,
+    "theme": "light",
+    "violations": []
+  },
+  {
+    "id": "banner",
+    "pattern": false,
+    "theme": "light",
+    "violations": []
+  },
+  {
+    "id": "data-table",
+    "pattern": false,
+    "theme": "light",
+    "violations": []
+  },
+  {
+    "id": "description-list",
+    "pattern": false,
+    "theme": "light",
+    "violations": []
+  },
+  {
+    "id": "stat",
+    "pattern": false,
+    "theme": "light",
+    "violations": []
+  },
+  {
+    "id": "timeline",
+    "pattern": false,
+    "theme": "light",
+    "violations": []
+  },
+  {
+    "id": "tree",
+    "pattern": false,
+    "theme": "light",
+    "violations": []
+  },
+  {
+    "id": "container",
+    "pattern": false,
+    "theme": "light",
+    "violations": []
+  },
+  {
+    "id": "stack",
+    "pattern": false,
+    "theme": "light",
+    "violations": []
+  },
+  {
+    "id": "grid",
+    "pattern": false,
+    "theme": "light",
+    "violations": []
+  },
+  {
+    "id": "aspect-ratio",
+    "pattern": false,
+    "theme": "light",
+    "violations": []
+  },
+  {
+    "id": "bottom-cta",
+    "pattern": false,
+    "theme": "light",
+    "violations": []
+  },
+  {
+    "id": "text",
+    "pattern": false,
+    "theme": "light",
+    "violations": []
+  },
+  {
+    "id": "visually-hidden",
+    "pattern": false,
+    "theme": "light",
+    "violations": []
+  },
+  {
+    "id": "onboarding",
+    "pattern": true,
+    "theme": "light",
+    "violations": []
+  },
+  {
+    "id": "settings",
+    "pattern": true,
+    "theme": "light",
+    "violations": []
+  },
+  {
+    "id": "search",
+    "pattern": true,
+    "theme": "light",
+    "violations": []
+  },
+  {
+    "id": "workspace",
+    "pattern": true,
+    "theme": "light",
+    "violations": []
+  },
+  {
+    "id": "checkout",
+    "pattern": true,
+    "theme": "light",
+    "violations": []
+  },
+  {
+    "id": "dashboard",
+    "pattern": true,
+    "theme": "light",
+    "violations": []
+  },
+  {
+    "id": "button",
+    "pattern": false,
+    "theme": "dark",
+    "violations": []
+  },
+  {
+    "id": "icon-button",
+    "pattern": false,
+    "theme": "dark",
+    "violations": []
+  },
+  {
+    "id": "link",
+    "pattern": false,
+    "theme": "dark",
+    "violations": []
+  },
+  {
+    "id": "button-group",
+    "pattern": false,
+    "theme": "dark",
+    "violations": []
+  },
+  {
+    "id": "split-button",
+    "pattern": false,
+    "theme": "dark",
+    "violations": []
+  },
+  {
+    "id": "toggle-button",
+    "pattern": false,
+    "theme": "dark",
+    "violations": []
+  },
+  {
+    "id": "copy-button",
+    "pattern": false,
+    "theme": "dark",
+    "violations": []
+  },
+  {
+    "id": "hold-button",
+    "pattern": false,
+    "theme": "dark",
+    "violations": []
+  },
+  {
+    "id": "field",
+    "pattern": false,
+    "theme": "dark",
+    "violations": []
+  },
+  {
+    "id": "text-field",
+    "pattern": false,
+    "theme": "dark",
+    "violations": []
+  },
+  {
+    "id": "textarea",
+    "pattern": false,
+    "theme": "dark",
+    "violations": []
+  },
+  {
+    "id": "password-field",
+    "pattern": false,
+    "theme": "dark",
+    "violations": []
+  },
+  {
+    "id": "search-field",
+    "pattern": false,
+    "theme": "dark",
+    "violations": []
+  },
+  {
+    "id": "number-field",
+    "pattern": false,
+    "theme": "dark",
+    "violations": []
+  },
+  {
+    "id": "select",
+    "pattern": false,
+    "theme": "dark",
+    "violations": []
+  },
+  {
+    "id": "combobox",
+    "pattern": false,
+    "theme": "dark",
+    "violations": []
+  },
+  {
+    "id": "multi-select",
+    "pattern": false,
+    "theme": "dark",
+    "violations": []
+  },
+  {
+    "id": "checkbox",
+    "pattern": false,
+    "theme": "dark",
+    "violations": []
+  },
+  {
+    "id": "radio-group",
+    "pattern": false,
+    "theme": "dark",
+    "violations": []
+  },
+  {
+    "id": "switch",
+    "pattern": false,
+    "theme": "dark",
+    "violations": []
+  },
+  {
+    "id": "slider",
+    "pattern": false,
+    "theme": "dark",
+    "violations": []
+  },
+  {
+    "id": "rating",
+    "pattern": false,
+    "theme": "dark",
+    "violations": []
+  },
+  {
+    "id": "otp-input",
+    "pattern": false,
+    "theme": "dark",
+    "violations": []
+  },
+  {
+    "id": "file-upload",
+    "pattern": false,
+    "theme": "dark",
+    "violations": []
+  },
+  {
+    "id": "date-picker",
+    "pattern": false,
+    "theme": "dark",
+    "violations": []
+  },
+  {
+    "id": "date-range-picker",
+    "pattern": false,
+    "theme": "dark",
+    "violations": []
+  },
+  {
+    "id": "time-picker",
+    "pattern": false,
+    "theme": "dark",
+    "violations": []
+  },
+  {
+    "id": "color-picker",
+    "pattern": false,
+    "theme": "dark",
+    "violations": []
+  },
+  {
+    "id": "calendar",
+    "pattern": false,
+    "theme": "dark",
+    "violations": []
+  },
+  {
+    "id": "agreement",
+    "pattern": false,
+    "theme": "dark",
+    "violations": []
+  },
+  {
+    "id": "tabs",
+    "pattern": false,
+    "theme": "dark",
+    "violations": []
+  },
+  {
+    "id": "segmented-control",
+    "pattern": false,
+    "theme": "dark",
+    "violations": []
+  },
+  {
+    "id": "breadcrumb",
+    "pattern": false,
+    "theme": "dark",
+    "violations": []
+  },
+  {
+    "id": "pagination",
+    "pattern": false,
+    "theme": "dark",
+    "violations": []
+  },
+  {
+    "id": "stepper",
+    "pattern": false,
+    "theme": "dark",
+    "violations": []
+  },
+  {
+    "id": "navigation-bar",
+    "pattern": false,
+    "theme": "dark",
+    "violations": []
+  },
+  {
+    "id": "side-navigation",
+    "pattern": false,
+    "theme": "dark",
+    "violations": []
+  },
+  {
+    "id": "bottom-navigation",
+    "pattern": false,
+    "theme": "dark",
+    "violations": []
+  },
+  {
+    "id": "command-palette",
+    "pattern": false,
+    "theme": "dark",
+    "violations": []
+  },
+  {
+    "id": "card",
+    "pattern": false,
+    "theme": "dark",
+    "violations": []
+  },
+  {
+    "id": "list-row",
+    "pattern": false,
+    "theme": "dark",
+    "violations": []
+  },
+  {
+    "id": "accordion",
+    "pattern": false,
+    "theme": "dark",
+    "violations": []
+  },
+  {
+    "id": "divider",
+    "pattern": false,
+    "theme": "dark",
+    "violations": []
+  },
+  {
+    "id": "avatar",
+    "pattern": false,
+    "theme": "dark",
+    "violations": []
+  },
+  {
+    "id": "avatar-group",
+    "pattern": false,
+    "theme": "dark",
+    "violations": []
+  },
+  {
+    "id": "badge",
+    "pattern": false,
+    "theme": "dark",
+    "violations": []
+  },
+  {
+    "id": "tag",
+    "pattern": false,
+    "theme": "dark",
+    "violations": []
+  },
+  {
+    "id": "tooltip",
+    "pattern": false,
+    "theme": "dark",
+    "violations": []
+  },
+  {
+    "id": "scroll-area",
+    "pattern": false,
+    "theme": "dark",
+    "violations": []
+  },
+  {
+    "id": "carousel",
+    "pattern": false,
+    "theme": "dark",
+    "violations": []
+  },
+  {
+    "id": "dialog",
+    "pattern": false,
+    "theme": "dark",
+    "violations": []
+  },
+  {
+    "id": "alert-dialog",
+    "pattern": false,
+    "theme": "dark",
+    "violations": []
+  },
+  {
+    "id": "drawer",
+    "pattern": false,
+    "theme": "dark",
+    "violations": []
+  },
+  {
+    "id": "bottom-sheet",
+    "pattern": false,
+    "theme": "dark",
+    "violations": []
+  },
+  {
+    "id": "popover",
+    "pattern": false,
+    "theme": "dark",
+    "violations": []
+  },
+  {
+    "id": "dropdown-menu",
+    "pattern": false,
+    "theme": "dark",
+    "violations": []
+  },
+  {
+    "id": "alert",
+    "pattern": false,
+    "theme": "dark",
+    "violations": []
+  },
+  {
+    "id": "toast",
+    "pattern": false,
+    "theme": "dark",
+    "violations": []
+  },
+  {
+    "id": "progress",
+    "pattern": false,
+    "theme": "dark",
+    "violations": []
+  },
+  {
+    "id": "spinner",
+    "pattern": false,
+    "theme": "dark",
+    "violations": []
+  },
+  {
+    "id": "skeleton",
+    "pattern": false,
+    "theme": "dark",
+    "violations": []
+  },
+  {
+    "id": "empty-state",
+    "pattern": false,
+    "theme": "dark",
+    "violations": []
+  },
+  {
+    "id": "result",
+    "pattern": false,
+    "theme": "dark",
+    "violations": []
+  },
+  {
+    "id": "banner",
+    "pattern": false,
+    "theme": "dark",
+    "violations": []
+  },
+  {
+    "id": "data-table",
+    "pattern": false,
+    "theme": "dark",
+    "violations": []
+  },
+  {
+    "id": "description-list",
+    "pattern": false,
+    "theme": "dark",
+    "violations": []
+  },
+  {
+    "id": "stat",
+    "pattern": false,
+    "theme": "dark",
+    "violations": []
+  },
+  {
+    "id": "timeline",
+    "pattern": false,
+    "theme": "dark",
+    "violations": []
+  },
+  {
+    "id": "tree",
+    "pattern": false,
+    "theme": "dark",
+    "violations": []
+  },
+  {
+    "id": "container",
+    "pattern": false,
+    "theme": "dark",
+    "violations": []
+  },
+  {
+    "id": "stack",
+    "pattern": false,
+    "theme": "dark",
+    "violations": []
+  },
+  {
+    "id": "grid",
+    "pattern": false,
+    "theme": "dark",
+    "violations": []
+  },
+  {
+    "id": "aspect-ratio",
+    "pattern": false,
+    "theme": "dark",
+    "violations": []
+  },
+  {
+    "id": "bottom-cta",
+    "pattern": false,
+    "theme": "dark",
+    "violations": []
+  },
+  {
+    "id": "text",
+    "pattern": false,
+    "theme": "dark",
+    "violations": []
+  },
+  {
+    "id": "visually-hidden",
+    "pattern": false,
+    "theme": "dark",
+    "violations": []
+  },
+  {
+    "id": "onboarding",
+    "pattern": true,
+    "theme": "dark",
+    "violations": []
+  },
+  {
+    "id": "settings",
+    "pattern": true,
+    "theme": "dark",
+    "violations": []
+  },
+  {
+    "id": "search",
+    "pattern": true,
+    "theme": "dark",
+    "violations": []
+  },
+  {
+    "id": "workspace",
+    "pattern": true,
+    "theme": "dark",
+    "violations": []
+  },
+  {
+    "id": "checkout",
+    "pattern": true,
+    "theme": "dark",
+    "violations": []
+  },
+  {
+    "id": "dashboard",
+    "pattern": true,
+    "theme": "dark",
+    "violations": []
+  }
+]

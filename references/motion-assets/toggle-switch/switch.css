@@ -1,0 +1,8 @@
+/* Toggle Switch: the knob stretches as it travels, then rounds up and
+   bounces on arrival while the track fills green. */
+.set{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:min(320px,calc(100vw - 48px));padding:6px 16px;border-radius:24px;background:var(--surface);font-family:var(--font-inter,Inter),Inter,"Helvetica Neue",Arial,sans-serif;}
+.row{display:flex;align-items:center;justify-content:space-between;height:60px}
+.row b{display:block;font-size:var(--fs-base);font-weight:var(--fw-medium);color:var(--text)}
+.row span{display:block;font-size:var(--fs-xs);color:var(--muted);margin-top:2px}
+.sw{position:relative;width:52px;height:32px;flex:none;border:0;border-radius:16px;background:var(--fill-3);cursor:pointer;padding:0}
+.sw i{position:absolute;left:3px;top:3px;height:26px;width:26px;border-radius:13px;background:var(--white);will-change:transform,width}

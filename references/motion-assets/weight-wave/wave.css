@@ -1,0 +1,9 @@
+/* Weight Wave: letters gain weight near the pointer. Needs a variable font:
+   Inter with the whole weight axis (on the site, the site's own Inter variable). */
+.wave{
+  position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
+  white-space:nowrap;color:var(--text);
+  font-family:var(--font-inter,Inter),Inter,"Helvetica Neue",Arial,sans-serif;
+  font-size:min(54px,calc(100vw * .1));letter-spacing:-.03em;line-height:1.2;
+}
+.wave .ch{display:inline-block;white-space:pre;font-weight:300}

@@ -1,0 +1,21 @@
+/* Roll Links: each letter is a little drum with the letter on it twice.
+   On hover the drums turn one after another, so the word rolls over from left
+   to right, and the other links step back. */
+.links{
+  position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
+  display:flex;flex-direction:column;align-items:flex-start;gap:2px;
+  font-family:var(--font-inter,Inter),Inter,"Helvetica Neue",Arial,sans-serif;
+  font-size:min(44px,calc(100vw * .09));font-weight:var(--fw-bold);letter-spacing:-.04em;line-height:1.1;
+}
+.lk{
+  appearance:none;border:0;background:none;padding:0;margin:0;font:inherit;letter-spacing:inherit;
+  color:var(--text);cursor:pointer;outline:none;display:flex;align-items:center;gap:.22em;
+  transition:color .22s ease;
+}
+.links.hot .lk{color:var(--muted-2)}
+.links.hot .lk.on{color:var(--text)}
+.lk:focus-visible{color:var(--text)}
+.ch{display:inline-block;height:1.1em;overflow:hidden;white-space:pre}
+.ch .in{display:flex;flex-direction:column;will-change:transform}
+.ch .in i{font-style:normal;height:1.1em}
+.lk .n{font-size:.32em;font-weight:var(--fw-medium);letter-spacing:0;color:var(--muted-2);align-self:flex-start;margin-top:.5em;font-variant-numeric:tabular-nums}

@@ -1,0 +1,30 @@
+/* Parallax Ticket: layered card that tilts with depth and flips to its back */
+.t-stage{position:absolute;left:50%;top:50%;width:264px;height:356px;margin:-178px 0 0 -132px;perspective:900px}
+.ticket{position:relative;width:100%;height:100%;transform-style:preserve-3d;cursor:pointer;outline:none;will-change:transform}
+.side{
+  position:absolute;inset:0;border-radius:var(--r-card);background:var(--surface);overflow:hidden;
+  backface-visibility:hidden;-webkit-backface-visibility:hidden;
+  box-shadow:0 0 0 1px var(--rim) inset,0 40px 70px -30px rgba(0,0,0,calc(.95*var(--sh)));
+}
+.back{transform:rotateY(180deg)}
+.layer{position:absolute;inset:0;will-change:transform;pointer-events:none}
+.l-bg{inset:-20px;background-image:linear-gradient(var(--fill-1) 1px,transparent 1px),linear-gradient(90deg,var(--fill-1) 1px,transparent 1px);background-size:24px 24px}
+/* Simplified (Noah, 9 Nov 2026): just the picture, the title and one line. */
+.shade{position:absolute;inset:0;pointer-events:none;background:linear-gradient(180deg,transparent 45%,rgba(0,0,0,.5))}
+.l-text{padding:24px}
+.title{position:absolute;left:24px;bottom:62px;font-size:44px;line-height:.95;font-weight:var(--fw-bold);letter-spacing:-.04em;color:#fff}
+.meta{position:absolute;left:24px;right:24px;bottom:26px;display:flex;justify-content:space-between;align-items:center;font-size:var(--fs-sm);color:rgba(255,255,255,.75)}
+.meta b{color:#fff;font-weight:var(--fw-medium);font-variant-numeric:tabular-nums}
+.glare{position:absolute;inset:0;pointer-events:none;opacity:var(--g,0);
+  background:radial-gradient(240px circle at var(--gx,50%) var(--gy,30%),rgba(255,255,255,.22),transparent 60%);mix-blend-mode:screen}
+
+.back{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;padding:24px}
+.qr{width:168px;height:168px;border-radius:18px;background:var(--white);padding:12px}
+.qr svg{width:100%;height:100%;display:block}
+.seat{display:flex;gap:22px;text-align:center}
+.seat div{font-size:var(--fs-2xs);color:var(--muted)}
+.seat b{display:block;font-size:var(--fs-lg);font-weight:var(--fw-bold);color:var(--text);margin-top:2px}
+.flip-hint{font-size:var(--fs-xs);color:var(--muted-2)}
+
+/* Front image (Recraft, generated for Motion Studies) */
+.l-bg{background:#000 url(../shared/img/hills-8.webp) center/cover no-repeat}

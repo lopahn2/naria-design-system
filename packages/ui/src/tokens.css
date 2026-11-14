@@ -1,0 +1,92 @@
+/* Generated from tokens.json. Edit the source tokens, not this file. */
+.nds-theme{
+  --nds-canvas:#f6f8f8;
+  --nds-surface:#ffffff;
+  --nds-raised:#ffffff;
+  --nds-subtle:#eef1f2;
+  --nds-text:#171c1f;
+  --nds-muted:#56636a;
+  --nds-placeholder:#707d83;
+  --nds-border:#d8dfe1;
+  --nds-strong-border:#707d83;
+  --nds-primary:#171c1f;
+  --nds-on-primary:#ffffff;
+  --nds-accent:#086d72;
+  --nds-accent-soft:#e2f4f1;
+  --nds-focus:#086d72;
+  --nds-danger:#b02d3b;
+  --nds-danger-soft:#fff0f1;
+  --nds-success:#176a46;
+  --nds-success-soft:#e8f5ed;
+  --nds-warning:#825600;
+  --nds-warning-soft:#fff6dc;
+  --nds-info:#205db3;
+  --nds-info-soft:#edf4ff;
+  color-scheme:light;
+}
+.nds-theme[data-nds-theme="dark"]{
+  --nds-canvas:#11181c;
+  --nds-surface:#20292d;
+  --nds-raised:#303b40;
+  --nds-subtle:#303b40;
+  --nds-text:#f6f8f8;
+  --nds-muted:#b6c0c4;
+  --nds-placeholder:#b6c0c4;
+  --nds-border:#303b40;
+  --nds-strong-border:#707d83;
+  --nds-primary:#f6f8f8;
+  --nds-on-primary:#171c1f;
+  --nds-accent:#80d9cc;
+  --nds-accent-soft:#303b40;
+  --nds-focus:#80d9cc;
+  --nds-danger:#ff9da6;
+  --nds-danger-soft:#303b40;
+  --nds-success:#89dcb0;
+  --nds-success-soft:#303b40;
+  --nds-warning:#f3ca68;
+  --nds-warning-soft:#303b40;
+  --nds-info:#9fc3ff;
+  --nds-info-soft:#303b40;
+  color-scheme:dark;
+}
+.nds-theme{
+--nds-space-0:0px;
+--nds-space-2:2px;
+--nds-space-4:4px;
+--nds-space-6:6px;
+--nds-space-8:8px;
+--nds-space-12:12px;
+--nds-space-16:16px;
+--nds-space-20:20px;
+--nds-space-24:24px;
+--nds-space-32:32px;
+--nds-space-40:40px;
+--nds-space-48:48px;
+--nds-space-64:64px;
+--nds-space-80:80px;
+--nds-space-96:96px;
+--nds-radius-small:6px;
+--nds-radius-control:10px;
+--nds-radius-card:16px;
+--nds-radius-panel:24px;
+--nds-radius-pill:999px;
+--nds-motion-press:120ms;
+--nds-motion-hover:160ms;
+--nds-motion-select:220ms;
+--nds-motion-expand:240ms;
+--nds-motion-enter:280ms;
+--nds-motion-feedback:320ms;
+--nds-motion-gesture:360ms;
+--nds-control-small:36px;
+--nds-control-medium:44px;
+--nds-control-large:52px;
+--nds-type-display-size:56px;--nds-type-display-line:1.18;--nds-type-display-tracking:-2.52px;
+--nds-type-title-size:40px;--nds-type-title-line:1.3;--nds-type-title-tracking:-1.4px;
+--nds-type-heading-size:24px;--nds-type-heading-line:1.4;--nds-type-heading-tracking:-0.6px;
+--nds-type-subheading-size:18px;--nds-type-subheading-line:1.5;--nds-type-subheading-tracking:-0.27px;
+--nds-type-body-size:16px;--nds-type-body-line:1.7;--nds-type-body-tracking:0px;
+--nds-type-small-size:14px;--nds-type-small-line:1.65;--nds-type-small-tracking:0px;
+--nds-type-caption-size:12px;--nds-type-caption-line:1.6;--nds-type-caption-tracking:0px;
+--nds-font:"IBM Plex Sans KR",-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo",system-ui,sans-serif;--nds-mono:ui-monospace,SFMono-Regular,Consolas,monospace;--nds-ease:cubic-bezier(.22,.8,.22,1);--nds-spring:cubic-bezier(.2,1.25,.35,1);--nds-control-height:44px;--nds-control-padding:14px;--nds-shadow:0 2px 4px #13202005,0 8px 24px #13202008;--nds-shadow-overlay:0 16px 64px #0002;--nds-layer-sticky:20;--nds-layer-popover:40;--nds-layer-toast:100;--nds-page-gutter:24px;
+}
+.nds-theme[data-density="compact"]{--nds-control-height:36px;--nds-control-padding:10px}.nds-theme[data-nds-theme="dark"]{--nds-shadow:0 4px 24px #0002;--nds-shadow-overlay:0 16px 64px #0006}

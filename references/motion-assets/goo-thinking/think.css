@@ -1,0 +1,15 @@
+/* Goo Thinking: three dots bounce in a pill through a goo filter, so they
+   stretch toward each other. When the answer is ready they run together into
+   one drop, the drop sinks, and the pill opens into the reply. */
+.wrap{
+  position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
+  width:min(320px,calc(100vw - 48px));
+  font-family:var(--font-inter,Inter),Inter,"Helvetica Neue",Arial,sans-serif;
+}
+.bubble{position:relative;width:64px;height:40px;border-radius:20px;background:var(--fill-2);overflow:hidden}
+.goo{position:absolute;left:0;top:0;width:64px;height:40px;filter:url(#dotgoo)}
+.goo i{position:absolute;left:0;top:0;width:9px;height:9px;border-radius:50%;background:var(--text-2);will-change:transform}
+.answer{
+  position:absolute;left:16px;top:11px;margin:0;width:calc(min(320px,calc(100vw - 48px)) - 32px);
+  font-size:var(--fs-base);line-height:22px;color:var(--text);will-change:transform,opacity;
+}

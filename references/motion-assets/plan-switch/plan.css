@@ -1,0 +1,46 @@
+/* Plan Switch: a pricing card that answers the only question people have.
+   Monthly / Yearly slides a highlight with a stiff front edge and a soft back
+   edge, the price rolls on digit drums, "Save 20%" pops in, the billing line
+   rolls over and a free months row grows into the list. Upgrade closes into a
+   spinner and opens as a green "You're on Pro".
+   Read DESIGN.md first. Tokens only: no colours, small font sizes, strokes or shadows by hand. */
+/* Yearly makes the card 332px tall. Centred, its top reached the stage's theme
+   button (top right, 12 to 44px). It sits 18px lower so the top stays below
+   that row and the bottom keeps 16px in a 400px stage. */
+.card{
+  position:absolute;left:50%;top:50%;transform:translate(-50%,calc(-50% + 18px));
+  width:min(300px,calc(100vw - 32px));padding:8px;border-radius:var(--r-card);background:var(--surface);
+}
+.seg{position:relative;display:flex;padding:4px;border-radius:var(--r-pill);background:var(--fill-1)}
+.seg button{position:relative;z-index:1;flex:1;height:36px;border:0;background:none;cursor:pointer;border-radius:var(--r-pill);font:var(--fw-medium) var(--fs-md) var(--font);color:var(--muted);transition:color .25s;-webkit-tap-highlight-color:transparent}
+.seg button[aria-checked="true"]{color:var(--text)}
+.seg button:focus-visible{outline:2px solid var(--text-2);outline-offset:-2px}
+.hl{position:absolute;left:0;top:4px;height:36px;border-radius:var(--r-pill);background:var(--fill-3);will-change:transform,width}
+.plan{padding:14px 12px 2px}
+.name{display:flex;align-items:center;justify-content:space-between;height:26px;font-size:var(--fs-xl);font-weight:var(--fw-bold);letter-spacing:-.01em;color:var(--text)}
+.save{height:24px;padding:0 9px;border-radius:var(--r-pill);background:var(--green-soft);color:var(--green-text);font-size:var(--fs-xs);font-weight:var(--fw-bold);line-height:24px;transform-origin:100% 50%;will-change:transform,opacity}
+.price{display:flex;align-items:flex-start;margin-top:8px;color:var(--text);font-weight:var(--fw-bold);letter-spacing:-.03em}
+.cur{font-size:20px;line-height:28px;margin-right:2px}
+.num{display:inline-flex;font-size:44px;line-height:48px;height:48px;font-variant-numeric:tabular-nums}
+.per{align-self:flex-end;margin:0 0 8px 4px;font-size:var(--fs-base);font-weight:var(--fw-medium);letter-spacing:0;color:var(--muted)}
+.rc{display:inline-block;height:48px;overflow:hidden;width:.6em;will-change:width,opacity;-webkit-mask-image:linear-gradient(180deg,transparent 0,#000 14%,#000 86%,transparent 100%);mask-image:linear-gradient(180deg,transparent 0,#000 14%,#000 86%,transparent 100%)}
+.rs{display:block;will-change:transform}
+.rs i{display:block;height:48px;line-height:48px;font-style:normal;text-align:center}
+.roll-line{position:relative;height:20px;overflow:hidden}
+.roll-line span{position:absolute;left:0;top:0;line-height:20px;white-space:nowrap;will-change:transform,opacity}
+.bill{margin-top:2px;font-size:var(--fs-sm);color:var(--muted)}
+.feats{list-style:none;margin:4px 0 10px;padding:0 12px}
+.feats li{display:flex;align-items:center;gap:10px;height:30px;font-size:var(--fs-md);color:var(--text-2);overflow:hidden}
+.feats li.extra{will-change:height,opacity}
+.ck{width:20px;height:20px;border-radius:50%;background:var(--fill-2);display:grid;place-items:center;flex:none;color:var(--text)}
+.ck.is-green{background:var(--green);color:var(--on-green)}
+.ck svg{width:12px;height:12px;fill:none;stroke:currentColor;stroke-width:2.8;stroke-linecap:round;stroke-linejoin:round}
+.extra .ck{will-change:transform}
+.cta{position:relative;display:block;margin:0 auto;width:100%;height:48px;border:0;border-radius:var(--r-pill);cursor:pointer;overflow:hidden;
+  background:var(--inverse);color:var(--on-inverse);font:var(--fw-bold) var(--fs-base) var(--font);letter-spacing:-.01em;transition:background .3s,color .3s;will-change:width,transform;-webkit-tap-highlight-color:transparent}
+.cta:focus-visible{outline:2px solid var(--text-2);outline-offset:2px}
+.cta.is-done{background:var(--green);color:var(--on-green)}
+.cta-in{position:absolute;inset:0}
+.cta-in > span{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;gap:8px;white-space:nowrap;will-change:transform,opacity}
+.spin{width:20px;height:20px;border-radius:50%;background:conic-gradient(from 0deg,transparent 0 25%,currentColor);-webkit-mask:radial-gradient(circle,transparent 7px,#000 7.5px);mask:radial-gradient(circle,transparent 7px,#000 7.5px)}
+.cta svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round}

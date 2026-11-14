@@ -1,0 +1,15 @@
+/* Dynamic Menu: a small pill with a two line toggle. Open, it springs into a
+   panel, the lines turn into a cross and the links rise in one by one. */
+.menu{
+  position:absolute;left:50%;top:50%;width:150px;height:52px;transform:translate(-50%,-50%);
+  border-radius:26px;background:var(--surface);overflow:hidden;
+  font-family:var(--font-inter,Inter),Inter,"Helvetica Neue",Arial,sans-serif;
+}
+.head{position:absolute;left:0;top:0;right:0;height:52px;display:flex;align-items:center;justify-content:space-between;padding:0 14px 0 20px;border:0;background:none;color:var(--text);cursor:pointer;font:inherit}
+.brand{font-size:var(--fs-base);font-weight:var(--fw-bold);letter-spacing:-.01em}
+.tog{position:relative;width:24px;height:24px}
+.tog i{position:absolute;left:3px;right:3px;height:2px;border-radius:2px;background:currentColor;top:11px;will-change:transform}
+.links{position:absolute;left:0;right:0;top:52px;list-style:none;padding:4px 10px 10px}
+.links li{display:flex;align-items:center;justify-content:space-between;padding:0 10px;height:48px;border-radius:14px;will-change:transform,opacity;opacity:0}
+.links a{color:var(--text);text-decoration:none;font-size:22px;font-weight:var(--fw-bold);letter-spacing:-.02em}
+.links span{font-size:var(--fs-xs);font-weight:var(--fw-medium);color:var(--muted);padding:3px 8px;border-radius:var(--r-pill);background:var(--fill-2)}
