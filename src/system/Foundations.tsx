@@ -99,7 +99,7 @@ export function Foundation({ id, onPaletteChange, onThemeChange }: { id: string;
               {
                 label: "타이포 · IBM",
                 value:
-                  "영문·숫자는 Outfit, 한글은 Wanted Sans 400/600. 컴포넌트는 고정 타입, 페이지 제목은 유동 타입을 사용합니다.",
+                  "Wanted Sans 400/600. 컴포넌트는 고정 타입, 페이지 제목은 유동 타입을 사용합니다.",
               },
               {
                 label: "입력 · Toss / Adobe",
@@ -211,7 +211,7 @@ export function Foundation({ id, onPaletteChange, onThemeChange }: { id: string;
     return (
       <>
         <div className="nds-type-intro">
-          <span>OUTFIT + WANTED SANS</span>
+          <span>WANTED SANS</span>
           <h2>
             생각을 명확하게,
             <br />

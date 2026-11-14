@@ -1141,7 +1141,7 @@ function Release() {
             {
               label: "기반",
               value:
-                "원시·의미 토큰, light/dark, 서비스 테마, 밀도, Outfit + Wanted Sans, Radix Icons",
+                "원시·의미 토큰, light/dark, 서비스 테마, 밀도, Wanted Sans, Radix Icons",
             },
             {
               label: "구성요소",

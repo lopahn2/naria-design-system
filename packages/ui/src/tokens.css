@@ -87,6 +87,6 @@
 --nds-type-body-size:16px;--nds-type-body-line:1.7;--nds-type-body-tracking:0px;
 --nds-type-small-size:14px;--nds-type-small-line:1.65;--nds-type-small-tracking:0px;
 --nds-type-caption-size:12px;--nds-type-caption-line:1.6;--nds-type-caption-tracking:0px;
---nds-font:"Outfit","Wanted Sans",-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo",system-ui,sans-serif;--nds-mono:ui-monospace,SFMono-Regular,Consolas,monospace;--nds-ease:cubic-bezier(.22,.8,.22,1);--nds-spring:cubic-bezier(.2,1.25,.35,1);--nds-control-height:44px;--nds-control-padding:14px;--nds-shadow:0 2px 4px #13202005,0 8px 24px #13202008;--nds-shadow-overlay:0 16px 64px #0002;--nds-layer-sticky:20;--nds-layer-popover:40;--nds-layer-toast:100;--nds-page-gutter:24px;
+--nds-font:"Wanted Sans",-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo",system-ui,sans-serif;--nds-mono:ui-monospace,SFMono-Regular,Consolas,monospace;--nds-ease:cubic-bezier(.22,.8,.22,1);--nds-spring:cubic-bezier(.2,1.25,.35,1);--nds-control-height:44px;--nds-control-padding:14px;--nds-shadow:0 2px 4px #13202005,0 8px 24px #13202008;--nds-shadow-overlay:0 16px 64px #0002;--nds-layer-sticky:20;--nds-layer-popover:40;--nds-layer-toast:100;--nds-page-gutter:24px;
 }
 .nds-theme[data-density="compact"]{--nds-control-height:36px;--nds-control-padding:10px}.nds-theme[data-nds-theme="dark"]{--nds-shadow:0 4px 24px #0002;--nds-shadow-overlay:0 16px 64px #0006}
