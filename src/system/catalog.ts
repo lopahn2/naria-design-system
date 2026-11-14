@@ -619,6 +619,86 @@ const entries: Entry[] = [
     "화면에는 숨기되 보조기술에 필요한 설명을 남깁니다.",
     "아이콘 설명 · 부가 안내",
   ],
+  [
+    "zoom-controls",
+    "ZoomControls",
+    "확대 제어",
+    "actions",
+    "캔버스의 축소·확대·전체 보기를 한 묶음으로 제공합니다.",
+    "축소 · 확대 · 배율 표시 · 전체 보기",
+  ],
+  [
+    "composer",
+    "Composer",
+    "메시지 입력창",
+    "forms",
+    "대화 아래에 고정되는 입력란과 전송 버튼입니다.",
+    "기본 · 안내 문구 · 전송 중 · 비활성",
+  ],
+  [
+    "code-block",
+    "CodeBlock",
+    "코드·원문 블록",
+    "surfaces",
+    "로그·원문·식별자를 글자 그대로 보여 줍니다.",
+    "줄바꿈 · 가로 스크롤 · 제목과 메타 · 복사 · 최대 높이",
+  ],
+  [
+    "chat-message",
+    "ChatMessage",
+    "대화 메시지",
+    "surfaces",
+    "누가 언제 무엇을 말했는지 한 묶음으로 보여 줍니다.",
+    "사용자 · AI · 시스템 / 상태 · 행동 · 강조",
+  ],
+  [
+    "diagram-node",
+    "DiagramNode",
+    "다이어그램 노드",
+    "surfaces",
+    "지도와 흐름도의 노드에 이름·종류·상태를 표시합니다.",
+    "기본 · 선택 · 점선(미관측·예정) / 단계 번호 · 아이콘 · 상태",
+  ],
+  [
+    "status-indicator",
+    "StatusIndicator",
+    "상태 표시",
+    "feedback",
+    "상태를 점과 문구로 함께 알립니다.",
+    "정상 · 경고 · 오류 · 안내 · 중립 · 미관측 / 맥동",
+  ],
+  [
+    "meter",
+    "Meter",
+    "미터",
+    "data",
+    "용량 대비 사용량을 막대와 수치로 표시합니다.",
+    "기본 · 경고 · 위험 · 미관측",
+  ],
+  [
+    "legend",
+    "Legend",
+    "범례",
+    "data",
+    "다이어그램에 쓰인 점·선·상자의 의미를 설명합니다.",
+    "점 · 실선 · 점선 · 상자",
+  ],
+  [
+    "app-shell",
+    "AppShell",
+    "앱 셸",
+    "layout",
+    "고정 탐색·상단 바·본문 영역으로 콘솔 화면의 틀을 구성합니다.",
+    "탐색 + 본문 · 상단 바 포함 · 작은 화면 가로 탐색",
+  ],
+  [
+    "pane",
+    "Pane",
+    "패널",
+    "layout",
+    "제목이 있는 작업 영역을 독립적으로 스크롤합니다.",
+    "기본 · 번호 · 행동 · 하단 고정 영역",
+  ],
 ];
 const behavior: Record<
   Category,
@@ -709,6 +789,29 @@ const behavior: Record<
   },
 };
 const contracts: Record<string, Partial<(typeof behavior)[Category]>> = {
+  "code-block": {
+    keyboard:
+      "스크롤 영역은 Tab으로 진입해 방향키로 이동합니다. 복사 버튼은 결과를 문구로 알립니다.",
+    rule: "원문은 번역하거나 줄이지 않고 글자 그대로 표시합니다. 해석은 블록 밖에 둡니다.",
+  },
+  "status-indicator": {
+    rule: "색만으로 상태를 전달하지 않습니다. 미관측은 정상과 다른 형태(점선 테두리)로 표시합니다.",
+  },
+  meter: {
+    rule: "값이 null이면 0으로 바꾸지 않고 미관측으로 표시합니다. 경고·위험 기준은 비율(0~1)로 지정합니다.",
+  },
+  composer: {
+    keyboard:
+      "Enter로 전송하고 Shift+Enter로 줄을 바꿉니다. 한글 조합 중의 Enter는 전송하지 않습니다.",
+  },
+  "diagram-node": {
+    keyboard:
+      "선택할 수 있는 노드는 버튼이며 aria-pressed로 선택 상태를 알립니다. 호버에서 위치는 움직이지 않습니다.",
+  },
+  pane: {
+    keyboard:
+      "스크롤 영역은 Tab으로 진입할 수 있고 제목으로 이름이 붙습니다. 하단 영역은 스크롤과 무관하게 보입니다.",
+  },
   "hold-button": {
     motion: "press · 120ms / 확인 유지 · 900ms",
     keyboard:

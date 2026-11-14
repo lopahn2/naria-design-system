@@ -23,8 +23,8 @@ const { ComponentDemo } =
 const api = JSON.parse(
   await fs.readFile("src/system/api.generated.json", "utf8"),
 );
-test("76 exported components render in light/dark and all demo states", () => {
-  assert.equal(Object.keys(api).length, 76);
+test("86 exported components render in light/dark and all demo states", () => {
+  assert.equal(Object.keys(api).length, 86);
   for (const [id, meta] of Object.entries(api)) {
     assert.equal(typeof UI[meta.exportName], "function", id);
     for (const theme of ["light", "dark"])

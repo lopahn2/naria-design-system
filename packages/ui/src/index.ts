@@ -9,3 +9,4 @@ export * from "./overlays";
 export * from "./feedback";
 export * from "./data";
 export * from "./pattern-primitives";
+export * from "./console";
