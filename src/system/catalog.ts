@@ -683,22 +683,7 @@ const entries: Entry[] = [
     "다이어그램에 쓰인 점·선·상자의 의미를 설명합니다.",
     "점 · 실선 · 점선 · 상자",
   ],
-  [
-    "app-shell",
-    "AppShell",
-    "앱 셸",
-    "layout",
-    "고정 탐색·상단 바·본문 영역으로 콘솔 화면의 틀을 구성합니다.",
-    "탐색 + 본문 · 상단 바 포함 · 작은 화면 가로 탐색",
-  ],
-  [
-    "pane",
-    "Pane",
-    "패널",
-    "layout",
-    "제목이 있는 작업 영역을 독립적으로 스크롤합니다.",
-    "기본 · 번호 · 행동 · 하단 고정 영역",
-  ],
+
 ];
 const behavior: Record<
   Category,
@@ -807,10 +792,6 @@ const contracts: Record<string, Partial<(typeof behavior)[Category]>> = {
   "diagram-node": {
     keyboard:
       "선택할 수 있는 노드는 버튼이며 aria-pressed로 선택 상태를 알립니다. 호버에서 위치는 움직이지 않습니다.",
-  },
-  pane: {
-    keyboard:
-      "스크롤 영역은 Tab으로 진입할 수 있고 제목으로 이름이 붙습니다. 하단 영역은 스크롤과 무관하게 보입니다.",
   },
   "hold-button": {
     motion: "press · 120ms / 확인 유지 · 900ms",

@@ -83,20 +83,3 @@ export declare function DiagramNode({ title, meta, icon, index, status, tone, se
     disabled?: boolean;
     onSelect?: () => void;
 }): import("react").JSX.Element;
-/** Console frame: fixed navigation, a top bar and a main area that owns its own scrolling. */
-export declare function AppShell({ brand, navigation, topbar, children, navigationLabel, }: {
-    brand: ReactNode;
-    navigation: ReactNode;
-    topbar?: ReactNode;
-    children: ReactNode;
-    navigationLabel?: string;
-}): import("react").JSX.Element;
-/** A titled work area that scrolls on its own, with an optional footer that stays in view. */
-export declare function Pane({ title, index, actions, footer, children, scroll, }: {
-    title: string;
-    index?: string;
-    actions?: ReactNode;
-    footer?: ReactNode;
-    children: ReactNode;
-    scroll?: boolean;
-}): import("react").JSX.Element;

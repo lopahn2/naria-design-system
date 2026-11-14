@@ -3463,56 +3463,11 @@ function DiagramNode({
     }
   ) : /* @__PURE__ */ jsx11("div", { className, children: content });
 }
-function AppShell({
-  brand,
-  navigation,
-  topbar,
-  children,
-  navigationLabel = "\uC8FC \uD0D0\uC0C9"
-}) {
-  return /* @__PURE__ */ jsxs10("div", { className: "nds-app-shell", children: [
-    /* @__PURE__ */ jsxs10("aside", { className: "nds-app-shell-side", "aria-label": navigationLabel, children: [
-      /* @__PURE__ */ jsx11("div", { className: "nds-app-shell-brand", children: brand }),
-      navigation
-    ] }),
-    topbar && /* @__PURE__ */ jsx11("header", { className: "nds-app-shell-bar", children: topbar }),
-    /* @__PURE__ */ jsx11("main", { className: "nds-app-shell-main", children })
-  ] });
-}
-function Pane({
-  title,
-  index,
-  actions,
-  footer,
-  children,
-  scroll = true
-}) {
-  const id = useId8();
-  return /* @__PURE__ */ jsxs10("section", { className: "nds-pane", "aria-labelledby": id, children: [
-    /* @__PURE__ */ jsxs10("header", { children: [
-      index && /* @__PURE__ */ jsx11("span", { className: "nds-pane-index", children: index }),
-      /* @__PURE__ */ jsx11("h2", { id, children: title }),
-      actions && /* @__PURE__ */ jsx11("div", { className: "nds-pane-actions", children: actions })
-    ] }),
-    /* @__PURE__ */ jsx11(
-      "div",
-      {
-        className: cx("nds-pane-body", scroll && "is-scroll"),
-        tabIndex: scroll ? 0 : void 0,
-        role: scroll ? "region" : void 0,
-        "aria-labelledby": scroll ? id : void 0,
-        children
-      }
-    ),
-    footer && /* @__PURE__ */ jsx11("footer", { children: footer })
-  ] });
-}
 export {
   Accordion,
   Agreement,
   Alert,
   AlertDialog,
-  AppShell,
   AspectRatio,
   Avatar,
   AvatarGroup,
@@ -3561,7 +3516,6 @@ export {
   NumberField,
   OtpInput,
   Pagination,
-  Pane,
   PasswordField,
   Popover,
   Progress,

@@ -59,7 +59,7 @@ DatePicker는 날짜 직접 입력과 디자인 시스템 달력을 연결합니
 - `tokens.json`: 색상·간격·곡률·타입·모션·컨트롤·레이어·브레이크포인트
 - `LICENSES.md`: 공식 Radix Icons와 Wanted Sans 고지
 
-문서화된 86개 구성요소 외에 NariaProvider, useNaria, useToast 등의 지원 API를 제공합니다. 컴포넌트의 값과 업무 상태는 소비 화면이 관리합니다. 서비스 API 호출·인증·결제·파일 전송은 포함하지 않습니다.
+문서화된 84개 구성요소 외에 NariaProvider, useNaria, useToast 등의 지원 API를 제공합니다. 컴포넌트의 값과 업무 상태는 소비 화면이 관리합니다. 서비스 API 호출·인증·결제·파일 전송은 포함하지 않습니다.
 
 ## 반응형 계약
 

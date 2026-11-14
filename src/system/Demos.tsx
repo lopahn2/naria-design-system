@@ -1557,68 +1557,6 @@ Normal   Pulled    pod/order-7c9d  Container image already present on machine`}
           ]}
         />
       );
-    case "app-shell":
-      return (
-        <div style={{ height: 320, border: "1px solid var(--nds-border)" }}>
-          <UI.AppShell
-            brand="LiveProbe"
-            navigation={
-              <UI.SideNavigation
-                value={nav}
-                onValueChange={setNav}
-                items={[
-                  { value: "home", label: "운영 관제", icon: <HomeIcon /> },
-                  { value: "incidents", label: "장애 관제", icon: <BellIcon /> },
-                  { value: "settings", label: "설정", icon: <GearIcon /> },
-                ]}
-              />
-            }
-            topbar={
-              <>
-                <UI.Text size="small" muted>
-                  운영 관제 / 서비스 연결 지도
-                </UI.Text>
-                <UI.Badge tone="danger" dot>
-                  진행 중 장애 2건
-                </UI.Badge>
-              </>
-            }
-          >
-            <div style={{ padding: 24 }}>
-              <UI.Text>본문 영역은 자체적으로 스크롤됩니다.</UI.Text>
-            </div>
-          </UI.AppShell>
-        </div>
-      );
-    case "pane":
-      return (
-        <div style={{ height: 300 }}>
-          <UI.Pane
-            index="02"
-            title="운영자 대화"
-            actions={<UI.Badge tone="accent">분석 중</UI.Badge>}
-            footer={
-              <UI.Composer
-                value={text}
-                onValueChange={setText}
-                onSubmit={() => setText("")}
-                placeholder="메시지를 입력하세요"
-                disabled={disabled}
-              />
-            }
-          >
-            <UI.Stack gap={12}>
-              {["신호 9건을 수집했습니다.", "원인 후보 2개를 비교하고 있습니다.", "검증 단계로 이동합니다.", "조치 계획을 작성했습니다."].map(
-                (line, i) => (
-                  <UI.ChatMessage key={line} author="분석 에이전트" time={`14:0${i + 1}`}>
-                    {line}
-                  </UI.ChatMessage>
-                ),
-              )}
-            </UI.Stack>
-          </UI.Pane>
-        </div>
-      );
     default:
       return (
         <UI.Alert title="예제를 찾을 수 없습니다." tone="warning">
